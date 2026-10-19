@@ -1,0 +1,48 @@
+Ablation study — capability attribution (sdk corpus)
+==========================================================
+
+2916 LyN-X-only constructed endpoints reproduced at baseline (of 2916; 0 not reproduced by the current build, excluded).
+
+Share of constructed endpoints that REQUIRE each capability
+(recovered at baseline, lost when that capability alone is disabled):
+
+  capability     required       %   sole   %sole
+  ---------------------------------------------
+  template           2916     100   2916     100
+  concat                0       0      0       0
+  member                0       0      0       0
+  interproc             0       0      0       0
+  iteration             0       0      0       0
+  array_join            0       0      0       0
+  atob                  0       0      0       0
+  fromCharCode          0       0      0       0
+  str_transform         0       0      0       0
+  str_replace           0       0      0       0
+  new_url               0       0      0       0
+  query_params          0       0      0       0
+  promise               0       0      0       0
+
+'sole' = the endpoint hinges on that capability alone (disabling it is enough; it is the single
+point of failure). 'required' counts every endpoint the capability is necessary for, including
+those that also need others (e.g. a loop of template-literal URLs needs BOTH iteration + template).
+
+Capabilities needed per endpoint (how many single-ablation drops each endpoint suffers):
+  1 capability(ies): 2916 endpoints (100.0%)
+
+  0 endpoints (0.0%) survive EVERY single-capability ablation. Of these,
+    0 are single-fragment LITERALS (arity 1) — lynx-only because of SINK coverage, not URL
+      construction (a regex tool misses the sink, but the URL needs no reconstruction); and
+    0 are multi-fragment (arity>=2) recoverable via a substitutable path or lost only to a
+      COMBINATION of capabilities (not attributable to any single one).
+
+  Construction split: 2916 constructed (arity>=2), 0 literal (arity 1) of 2916 reproduced.
+
+Most common capability pairs required together:
+
+By sink type (top caps required, share of that sink's endpoints):
+  rest.post        n=  943  template:100.0%
+  rest.get         n=  661  template:100.0%
+  rest.put         n=  590  template:100.0%
+  rest.method      n=  316  template:100.0%
+  rest.delete      n=  293  template:100.0%
+  rest.patch       n=  113  template:100.0%

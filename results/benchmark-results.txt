@@ -1,0 +1,113 @@
+LyN-X benchmark — URL-reconstruction comparison
+====================================================
+
+Cases: 54 (cases=21, obfuscation=10, dispatch=6, sinks=10, relwarc=7)
+Tools: LinkFinder, JSluice, relwarc, LyN-X
+Substrate: one local .js file per case (tool-agnostic). Query strings are stripped before
+matching (host+path scored). Tiers: exact | templated_path | weak | miss.
+NOTE: CodeQL is reported separately (sink detection, not URL reconstruction) — codeql-bench.js.
+NOTE: the coherence histogram is a crawl-corpus metric (compare.js), not a benchmark figure.
+
+Cases solved (exact|templated endpoint recovered):
+  LinkFinder   25/54
+  JSluice      25/54
+  relwarc      19/54
+  LyN-X        54/54
+
+Per-case best tier (exact/templated/weak/miss):
+  LinkFinder   exact=25  templated=0  weak=15  miss=14
+  JSluice      exact=25  templated=0  weak=15  miss=14
+  relwarc      exact=19  templated=0  weak=0  miss=35
+  LyN-X        exact=51  templated=3  weak=0  miss=0
+
+Runtime (summed tool time across cases; wall-clock of each tool invocation):
+  LinkFinder   22208 ms total  (411.3 ms/case)
+  JSluice      3422 ms total  (63.4 ms/case)
+  relwarc      59184 ms total  (1096.0 ms/case)
+  LyN-X        17688 ms total  (327.6 ms/case)
+
+3-tier precision/recall/F1 + DG/ADG (OVERALL and per suite):
+  tool        scope               gt   F1_strict  F1_medium  F1_relaxed  DG    ADG
+  LinkFinder  OVERALL             77   0.3841     0.3841     0.6024      0.36  0.36
+  LinkFinder  cases               44   0.2273     0.2273     0.5455      0.45  0.45
+  LinkFinder  obfuscation         10   0.0000     0.0000     0.1250      0.50  0.50
+  LinkFinder  dispatch            6    0.6154     0.6154     0.6897      0.33  0.33
+  LinkFinder  sinks               10   1.0000     1.0000     1.0000      0.00  0.00
+  LinkFinder  relwarc             7    0.7143     0.7143     0.8571      0.14  0.14
+  JSluice     OVERALL             77   0.3992     0.3992     0.6307      0.30  0.30
+  JSluice     cases               44   0.2574     0.2574     0.5581      0.48  0.48
+  JSluice     obfuscation         10   0.0000     0.0000     0.2857      0.20  0.20
+  JSluice     dispatch            6    0.7273     0.7273     0.8000      0.00  0.00
+  JSluice     sinks               10   0.9474     0.9474     0.9474      0.00  0.00
+  JSluice     relwarc             7    0.7692     0.7692     0.9231      0.00  0.00
+  relwarc     OVERALL             77   0.3850     0.3850     0.3850      0.13  0.13
+  relwarc     cases               44   0.2667     0.2667     0.2667      0.20  0.20
+  relwarc     obfuscation         10   0.4286     0.4286     0.4286      0.10  0.10
+  relwarc     dispatch            6    0.0000     0.0000     0.0000      0.00  0.00
+  relwarc     sinks               10   0.3333     0.3333     0.3333      0.00  0.00
+  relwarc     relwarc             7    1.0000     1.0000     1.0000      0.00  0.00
+  LyN-X       OVERALL             77   0.9403     0.9765     0.9822      0.03  0.01
+  LyN-X       cases               44   0.9551     0.9775     0.9885      0.00  0.00
+  LyN-X       obfuscation         10   0.9000     1.0000     1.0000      0.00  0.00
+  LyN-X       dispatch            6    0.8333     1.0000     1.0000      0.00  0.00
+  LyN-X       sinks               10   1.0000     1.0000     1.0000      0.00  0.00
+  LyN-X       relwarc             7    0.9412     0.9412     0.9412      0.29  0.14
+
+Success matrix (✓ = usable endpoint recovered):
+
+  case                            suite        LinkFinder  JSluice  relwarc  LyN-X
+  04_ajax_data_object.js          relwarc      ✓           ✓        ✓        ✓    
+  05_post_concat_url.js           relwarc      ✗           ✗        ✓        ✓    
+  09_interproc_path_sensitive.js  relwarc      ✗           ✗        ✓        ✓    
+  08_deep_interprocedural.js      relwarc      ✓           ✓        ✓        ✓    
+  15_formdata_post.js             relwarc      ✓           ✓        ✓        ✓    
+  06_ajax_url_var_data_string.js  relwarc      ✓           ✓        ✓        ✓    
+  12_get_object_params.js         relwarc      ✓           ✓        ✓        ✓    
+  sink_websocket.js               sinks        ✓           ✗        ✗        ✓    
+  sink_location.js                sinks        ✓           ✓        ✓        ✓    
+  sink_dynamic_import.js          sinks        ✓           ✓        ✗        ✓    
+  sink_element_src.js             sinks        ✓           ✓        ✗        ✓    
+  sink_xhr_open.js                sinks        ✓           ✓        ✗        ✓    
+  sink_location_assign.js         sinks        ✓           ✓        ✗        ✓    
+  sink_window_open.js             sinks        ✓           ✓        ✓        ✓    
+  sink_sendbeacon.js              sinks        ✓           ✓        ✗        ✓    
+  sink_importscripts.js           sinks        ✓           ✓        ✗        ✓    
+  sink_history_pushstate.js       sinks        ✓           ✓        ✗        ✓    
+  rest_verb_method.js             dispatch     ✓           ✓        ✗        ✓    
+  rest_verb_string.js             dispatch     ✗           ✗        ✗        ✓    
+  rest_enum_var_path.js           dispatch     ✓           ✓        ✗        ✓    
+  rest_config_object.js           dispatch     ✓           ✓        ✗        ✓    
+  rest_tagged_template.js         dispatch     ✗           ✗        ✗        ✓    
+  rest_positional_pair.js         dispatch     ✓           ✓        ✗        ✓    
+  literal.js                      cases        ✓           ✓        ✓        ✓    
+  single_expr_concat.js           cases        ✗           ✓        ✓        ✓    
+  computed_member_sink.js         cases        ✓           ✓        ✗        ✓    
+  plus_equals.js                  cases        ✗           ✗        ✓        ✓    
+  template_unresolved.js          cases        ✗           ✗        ✗        ✓    
+  iife_scenarios.js               cases        ✓           ✓        ✗        ✓    
+  object_config.js                cases        ✓           ✓        ✓        ✓    
+  loop_forof_construct.js         cases        ✗           ✗        ✗        ✓    
+  conditional_protocol.js         cases        ✗           ✗        ✓        ✓    
+  loop_urlsearchparams.js         cases        ✗           ✗        ✗        ✓    
+  loop_map_resource.js            cases        ✗           ✗        ✗        ✓    
+  loop_foreach_construct.js       cases        ✗           ✗        ✗        ✓    
+  conditional_path.js             cases        ✗           ✗        ✓        ✓    
+  encode_uri_component.js         cases        ✓           ✓        ✓        ✓    
+  new_url.js                      cases        ✗           ✗        ✗        ✓    
+  collection_map_widen.js         cases        ✗           ✗        ✗        ✓    
+  collection_list_widen.js        cases        ✗           ✗        ✗        ✓    
+  iter_forward_wrapper.js         cases        ✗           ✗        ✗        ✓    
+  collection_build_merge.js       cases        ✗           ✗        ✗        ✓    
+  collection_build_imperative.js  cases        ✗           ✗        ✗        ✓    
+  promise_then.js                 cases        ✓           ✓        ✗        ✓    
+  obf_custom_decoder.js           obfuscation  ✗           ✗        ✗        ✓    
+  obf_string_transform.js         obfuscation  ✗           ✗        ✓        ✓    
+  obf_substring.js                obfuscation  ✗           ✗        ✓        ✓    
+  obf_array_join.js               obfuscation  ✗           ✗        ✗        ✓    
+  obf_fromcharcode.js             obfuscation  ✗           ✗        ✗        ✓    
+  obf_atob.js                     obfuscation  ✗           ✗        ✗        ✓    
+  obf_combined.js                 obfuscation  ✗           ✗        ✗        ✓    
+  obf_replace_templated.js        obfuscation  ✗           ✗        ✗        ✓    
+  obf_split_reverse.js            obfuscation  ✗           ✗        ✗        ✓    
+  obf_replace.js                  obfuscation  ✗           ✗        ✓        ✓    
+  TOTAL                                        25/54       25/54    19/54    54/54

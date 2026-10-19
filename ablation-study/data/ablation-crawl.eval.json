@@ -1,0 +1,682 @@
+{
+  "corpus": "crawl",
+  "targets_total": 1482371,
+  "targets_reproduced": 1481800,
+  "excluded_slow": {
+    "files": 21516,
+    "targets": 271888
+  },
+  "order": [
+    "concat",
+    "interproc",
+    "collection_widen",
+    "member",
+    "template",
+    "collection_build",
+    "iteration",
+    "array_join",
+    "query_params",
+    "str_replace",
+    "new_url",
+    "str_transform",
+    "iter_forward",
+    "atob",
+    "promise",
+    "fromCharCode"
+  ],
+  "greedy_order": [
+    "concat",
+    "interproc",
+    "collection_widen",
+    "member",
+    "template",
+    "collection_build",
+    "iteration",
+    "array_join",
+    "query_params",
+    "str_replace",
+    "new_url",
+    "str_transform",
+    "iter_forward",
+    "atob",
+    "promise",
+    "fromCharCode"
+  ],
+  "arity_all": {
+    "0": 156763,
+    "1": 170733,
+    "2": 260887,
+    "3": 780967,
+    "4": 95411,
+    "5": 16425,
+    "6": 563,
+    "7": 51
+  },
+  "datasets": {
+    "all": {
+      "label": "all",
+      "n": 1481800,
+      "ceiling": 0.8942,
+      "zero_caps": 156763,
+      "cumulative": [
+        0.843,
+        0.8523,
+        0.8545,
+        0.8579,
+        0.8925,
+        0.8925,
+        0.8938,
+        0.8941,
+        0.8941,
+        0.8941,
+        0.8942,
+        0.8942,
+        0.8942,
+        0.8942,
+        0.8942,
+        0.8942
+      ],
+      "baseline": 0.1058,
+      "subset_cumulative": [
+        0.1821,
+        0.3205,
+        0.7794,
+        0.9167,
+        0.9685,
+        0.9885,
+        0.9932,
+        0.9975,
+        0.9985,
+        0.9991,
+        0.9995,
+        0.9997,
+        0.9999,
+        1,
+        1,
+        1
+      ],
+      "capabilities": [
+        {
+          "capability": "concat",
+          "required": 1249130,
+          "pct": 84.3
+        },
+        {
+          "capability": "interproc",
+          "required": 1054604,
+          "pct": 71.2
+        },
+        {
+          "capability": "collection_widen",
+          "required": 823523,
+          "pct": 55.6
+        },
+        {
+          "capability": "member",
+          "required": 246534,
+          "pct": 16.6
+        },
+        {
+          "capability": "template",
+          "required": 81743,
+          "pct": 5.5
+        },
+        {
+          "capability": "collection_build",
+          "required": 30005,
+          "pct": 2
+        },
+        {
+          "capability": "iteration",
+          "required": 7098,
+          "pct": 0.5
+        },
+        {
+          "capability": "array_join",
+          "required": 6528,
+          "pct": 0.4
+        },
+        {
+          "capability": "query_params",
+          "required": 1523,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_replace",
+          "required": 828,
+          "pct": 0.1
+        },
+        {
+          "capability": "new_url",
+          "required": 600,
+          "pct": 0
+        },
+        {
+          "capability": "str_transform",
+          "required": 418,
+          "pct": 0
+        },
+        {
+          "capability": "iter_forward",
+          "required": 297,
+          "pct": 0
+        },
+        {
+          "capability": "atob",
+          "required": 71,
+          "pct": 0
+        },
+        {
+          "capability": "promise",
+          "required": 6,
+          "pct": 0
+        },
+        {
+          "capability": "fromCharCode",
+          "required": 4,
+          "pct": 0
+        }
+      ]
+    },
+    "recall": {
+      "label": "GT (recall)",
+      "n": 71409,
+      "ceiling": 0.6716,
+      "zero_caps": 23454,
+      "cumulative": [
+        0.5498,
+        0.574,
+        0.5786,
+        0.5917,
+        0.6698,
+        0.6698,
+        0.6703,
+        0.6707,
+        0.6707,
+        0.671,
+        0.6714,
+        0.6714,
+        0.6714,
+        0.6716,
+        0.6716,
+        0.6716
+      ],
+      "baseline": 0.3284,
+      "subset_cumulative": [
+        0.5539,
+        0.6291,
+        0.6439,
+        0.7364,
+        0.9692,
+        0.9747,
+        0.9911,
+        0.9956,
+        0.9975,
+        0.9984,
+        0.9991,
+        0.9994,
+        0.9995,
+        1,
+        1,
+        1
+      ],
+      "capabilities": [
+        {
+          "capability": "concat",
+          "required": 39260,
+          "pct": 55
+        },
+        {
+          "capability": "template",
+          "required": 17227,
+          "pct": 24.1
+        },
+        {
+          "capability": "interproc",
+          "required": 12363,
+          "pct": 17.3
+        },
+        {
+          "capability": "member",
+          "required": 8244,
+          "pct": 11.5
+        },
+        {
+          "capability": "collection_widen",
+          "required": 2071,
+          "pct": 2.9
+        },
+        {
+          "capability": "iteration",
+          "required": 1173,
+          "pct": 1.6
+        },
+        {
+          "capability": "collection_build",
+          "required": 407,
+          "pct": 0.6
+        },
+        {
+          "capability": "array_join",
+          "required": 321,
+          "pct": 0.4
+        },
+        {
+          "capability": "query_params",
+          "required": 138,
+          "pct": 0.2
+        },
+        {
+          "capability": "str_replace",
+          "required": 62,
+          "pct": 0.1
+        },
+        {
+          "capability": "new_url",
+          "required": 55,
+          "pct": 0.1
+        },
+        {
+          "capability": "atob",
+          "required": 36,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_transform",
+          "required": 22,
+          "pct": 0
+        },
+        {
+          "capability": "iter_forward",
+          "required": 4,
+          "pct": 0
+        },
+        {
+          "capability": "fromCharCode",
+          "required": 0,
+          "pct": 0
+        },
+        {
+          "capability": "promise",
+          "required": 0,
+          "pct": 0
+        }
+      ]
+    },
+    "recall_unique": {
+      "label": "GT-LyN-X-only",
+      "n": 31236,
+      "ceiling": 0.9967,
+      "zero_caps": 104,
+      "cumulative": [
+        0.8023,
+        0.839,
+        0.8397,
+        0.8523,
+        0.9946,
+        0.9946,
+        0.9946,
+        0.9956,
+        0.9956,
+        0.9961,
+        0.9964,
+        0.9964,
+        0.9964,
+        0.9967,
+        0.9967,
+        0.9967
+      ],
+      "baseline": 0.0033,
+      "subset_cumulative": [
+        0.1699,
+        0.3154,
+        0.348,
+        0.4787,
+        0.9579,
+        0.9689,
+        0.9902,
+        0.9935,
+        0.9959,
+        0.9978,
+        0.9984,
+        0.9987,
+        0.9988,
+        1,
+        1,
+        1
+      ],
+      "capabilities": [
+        {
+          "capability": "concat",
+          "required": 25062,
+          "pct": 80.2
+        },
+        {
+          "capability": "template",
+          "required": 15319,
+          "pct": 49
+        },
+        {
+          "capability": "interproc",
+          "required": 10065,
+          "pct": 32.2
+        },
+        {
+          "capability": "member",
+          "required": 5334,
+          "pct": 17.1
+        },
+        {
+          "capability": "collection_widen",
+          "required": 1581,
+          "pct": 5.1
+        },
+        {
+          "capability": "iteration",
+          "required": 665,
+          "pct": 2.1
+        },
+        {
+          "capability": "collection_build",
+          "required": 358,
+          "pct": 1.1
+        },
+        {
+          "capability": "array_join",
+          "required": 103,
+          "pct": 0.3
+        },
+        {
+          "capability": "query_params",
+          "required": 77,
+          "pct": 0.2
+        },
+        {
+          "capability": "str_replace",
+          "required": 58,
+          "pct": 0.2
+        },
+        {
+          "capability": "atob",
+          "required": 36,
+          "pct": 0.1
+        },
+        {
+          "capability": "new_url",
+          "required": 20,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_transform",
+          "required": 9,
+          "pct": 0
+        },
+        {
+          "capability": "iter_forward",
+          "required": 4,
+          "pct": 0
+        },
+        {
+          "capability": "fromCharCode",
+          "required": 0,
+          "pct": 0
+        },
+        {
+          "capability": "promise",
+          "required": 0,
+          "pct": 0
+        }
+      ]
+    },
+    "car": {
+      "label": "CAR",
+      "n": 306690,
+      "ceiling": 0.5658,
+      "zero_caps": 133172,
+      "cumulative": [
+        0.4558,
+        0.4743,
+        0.4826,
+        0.4886,
+        0.5587,
+        0.5587,
+        0.565,
+        0.5654,
+        0.5655,
+        0.5656,
+        0.5657,
+        0.5657,
+        0.5657,
+        0.5658,
+        0.5658,
+        0.5658
+      ],
+      "baseline": 0.4342,
+      "subset_cumulative": [
+        0.467,
+        0.4949,
+        0.5019,
+        0.9071,
+        0.9829,
+        0.9868,
+        0.9955,
+        0.9964,
+        0.9973,
+        0.9979,
+        0.9982,
+        0.9991,
+        0.9999,
+        1,
+        1,
+        1
+      ],
+      "capabilities": [
+        {
+          "capability": "concat",
+          "required": 139779,
+          "pct": 45.6
+        },
+        {
+          "capability": "member",
+          "required": 127048,
+          "pct": 41.4
+        },
+        {
+          "capability": "interproc",
+          "required": 106419,
+          "pct": 34.7
+        },
+        {
+          "capability": "collection_widen",
+          "required": 95633,
+          "pct": 31.2
+        },
+        {
+          "capability": "template",
+          "required": 24377,
+          "pct": 7.9
+        },
+        {
+          "capability": "iteration",
+          "required": 2640,
+          "pct": 0.9
+        },
+        {
+          "capability": "collection_build",
+          "required": 1214,
+          "pct": 0.4
+        },
+        {
+          "capability": "array_join",
+          "required": 304,
+          "pct": 0.1
+        },
+        {
+          "capability": "query_params",
+          "required": 279,
+          "pct": 0.1
+        },
+        {
+          "capability": "iter_forward",
+          "required": 262,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_transform",
+          "required": 257,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_replace",
+          "required": 191,
+          "pct": 0.1
+        },
+        {
+          "capability": "new_url",
+          "required": 87,
+          "pct": 0
+        },
+        {
+          "capability": "atob",
+          "required": 27,
+          "pct": 0
+        },
+        {
+          "capability": "promise",
+          "required": 1,
+          "pct": 0
+        },
+        {
+          "capability": "fromCharCode",
+          "required": 0,
+          "pct": 0
+        }
+      ]
+    },
+    "tar": {
+      "label": "TAR",
+      "n": 1103701,
+      "ceiling": 0.9999,
+      "zero_caps": 137,
+      "cumulative": [
+        0.9695,
+        0.9754,
+        0.9756,
+        0.9778,
+        0.9996,
+        0.9996,
+        0.9997,
+        0.9998,
+        0.9998,
+        0.9999,
+        0.9999,
+        0.9999,
+        0.9999,
+        0.9999,
+        0.9999,
+        0.9999
+      ],
+      "baseline": 0.0001,
+      "subset_cumulative": [
+        0.0789,
+        0.2521,
+        0.8652,
+        0.9311,
+        0.9644,
+        0.9899,
+        0.9927,
+        0.9979,
+        0.9989,
+        0.9994,
+        0.9998,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "capabilities": [
+        {
+          "capability": "concat",
+          "required": 1070091,
+          "pct": 97
+        },
+        {
+          "capability": "interproc",
+          "required": 935822,
+          "pct": 84.8
+        },
+        {
+          "capability": "collection_widen",
+          "required": 725819,
+          "pct": 65.8
+        },
+        {
+          "capability": "member",
+          "required": 111242,
+          "pct": 10.1
+        },
+        {
+          "capability": "template",
+          "required": 40139,
+          "pct": 3.6
+        },
+        {
+          "capability": "collection_build",
+          "required": 28384,
+          "pct": 2.6
+        },
+        {
+          "capability": "array_join",
+          "required": 5903,
+          "pct": 0.5
+        },
+        {
+          "capability": "iteration",
+          "required": 3285,
+          "pct": 0.3
+        },
+        {
+          "capability": "query_params",
+          "required": 1106,
+          "pct": 0.1
+        },
+        {
+          "capability": "str_replace",
+          "required": 575,
+          "pct": 0.1
+        },
+        {
+          "capability": "new_url",
+          "required": 458,
+          "pct": 0
+        },
+        {
+          "capability": "str_transform",
+          "required": 139,
+          "pct": 0
+        },
+        {
+          "capability": "iter_forward",
+          "required": 31,
+          "pct": 0
+        },
+        {
+          "capability": "atob",
+          "required": 8,
+          "pct": 0
+        },
+        {
+          "capability": "promise",
+          "required": 5,
+          "pct": 0
+        },
+        {
+          "capability": "fromCharCode",
+          "required": 4,
+          "pct": 0
+        }
+      ]
+    }
+  }
+}

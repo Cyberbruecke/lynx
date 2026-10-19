@@ -1,0 +1,41 @@
+{
+  "tools": [
+    "LinkFinder",
+    "JSluice",
+    "relwarc",
+    "LyN-X"
+  ],
+  "tiers": [
+    "exact",
+    "templated",
+    "weak",
+    "miss"
+  ],
+  "total_gt": 861385,
+  "counts": {
+    "LinkFinder": {
+      "exact": 141800,
+      "templated": 0,
+      "weak": 120773,
+      "miss": 598812
+    },
+    "JSluice": {
+      "exact": 139705,
+      "templated": 4468,
+      "weak": 127150,
+      "miss": 590062
+    },
+    "relwarc": {
+      "exact": 26233,
+      "templated": 0,
+      "weak": 3142,
+      "miss": 832010
+    },
+    "LyN-X": {
+      "exact": 72848,
+      "templated": 36259,
+      "weak": 13941,
+      "miss": 738337
+    }
+  }
+}

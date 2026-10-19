@@ -1,0 +1,15 @@
+{
+  "corpus": "crawl",
+  "targets": 1754259,
+  "files": 106730,
+  "by_kind": {
+    "recall": 91897,
+    "additional": 1662362
+  },
+  "by_sub": {
+    "recall:shared": 58520,
+    "recall:unique": 33377,
+    "additional:car": 411766,
+    "additional:tar": 1250596
+  }
+}

@@ -1,0 +1,45 @@
+LyN-X crawl-corpus comparison (extraction axis)
+================================================
+
+Corpus: 54405 domains scored, 861385 ground-truth endpoints.
+Tools: LinkFinder, JSluice, relwarc, LyN-X (relwarc = per-.js/relwarc-js static mode).
+Endpoint match: host+path (query stripped). Tiers: exact | templated | weak | miss.
+
+OVERALL 3-tier precision/recall/F1 + DG/ADG:
+  tool        GT     F1_s    F1_m    F1_r    DG     ADG
+  LinkFinder  861385 0.0270  0.0270  0.0585  13.11  13.11
+  JSluice     861385 0.0361  0.0373  0.0898  9.22   9.12
+  relwarc     861385 0.0528  0.0528  0.0587  0.59   0.59
+  LyN-X       861385 0.0455  0.0887  0.1193  5.59   0.80
+
+Same-host (first-party) vs external (third-party) split — recall F1 + DG (LyN-X targets external
+dependency recovery, so the external row is where the sink-coverage work matters):
+  tool        scope         GT      F1_s    F1_m    F1_r    DG
+  LinkFinder  same-host     324454  0.0078  0.0078  0.0156  27.76
+  LinkFinder  third-party   536931  0.0852  0.0852  0.1857  4.07
+  JSluice     same-host     324454  0.0117  0.0123  0.0377  18.64
+  JSluice     third-party   536931  0.0928  0.0953  0.2093  3.47
+  relwarc     same-host     324454  0.0443  0.0443  0.0569  0.37
+  relwarc     third-party   536931  0.0553  0.0553  0.0576  0.73
+  LyN-X       same-host     324454  0.0104  0.0392  0.0629  11.19
+  LyN-X       third-party   536931  0.1175  0.1705  0.2099  1.56
+
+GT endpoints recovered by best tier (feeds the stacked-bar figure):
+  LinkFinder  exact=141800  templated=0  weak=120773  miss=598812
+  JSluice     exact=139705  templated=4468  weak=127150  miss=590062
+  relwarc     exact=26233  templated=0  weak=3142  miss=832010
+  LyN-X       exact=72848  templated=36259  weak=13941  miss=738337
+
+Coherence — single-string coverage of a matched endpoint (higher = one coherent string,
+not fragments) + fragmentation (matching strings per endpoint):
+  tool        cov_mean  cov_median  frag_ratio
+  LinkFinder  0.686     0.750       1.44
+  JSluice     0.643     0.667       1.62
+  relwarc     0.965     1.000       4.61
+  LyN-X       0.916     1.000       4.46
+
+Phase-A runtime (wall-clock analyzing the corpus; cached files excluded):
+  LinkFinder  2.2 s over 0 files (all cached)
+  JSluice     2.2 s over 0 files (all cached)
+  relwarc     1.3 s over 0 files (all cached)
+  LyN-X       3.3 s over 0 files (all cached)

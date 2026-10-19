@@ -1,0 +1,61 @@
+style,tool,recall,precision,recovered,total
+resource-class interpolation,linkfinder,0.4542,0.3600,278,612
+resource-class interpolation,jsluice,0.4036,0.3652,247,612
+resource-class interpolation,relwarc,0.0000,0.0000,0,612
+resource-class interpolation,lynx,0.8693,0.9358,532,612
+route-string map,linkfinder,0.0000,0.0000,0,1196
+route-string map,jsluice,0.0000,0.0000,0,1196
+route-string map,relwarc,0.0000,0.0000,0,1196
+route-string map,lynx,0.0000,0.0000,0,1196
+generated resource-class,linkfinder,0.6908,0.1042,3979,5760
+generated resource-class,jsluice,0.2437,0.0607,1404,5760
+generated resource-class,relwarc,0.0000,0.0000,0,5760
+generated resource-class,lynx,0.6217,0.8981,3581,5760
+base + method concat,linkfinder,0.0000,0.0000,0,174
+base + method concat,jsluice,0.0000,0.0000,0,174
+base + method concat,relwarc,0.0000,0.0000,0,174
+base + method concat,lynx,0.0000,0.0000,0,174
+generated (fern),linkfinder,0.9803,0.1764,199,203
+generated (fern),jsluice,0.5468,0.1131,111,203
+generated (fern),relwarc,0.0000,0.0000,0,203
+generated (fern),lynx,0.9803,0.9543,199,203
+generated (openapi-generator),linkfinder,0.0000,0.0000,0,331
+generated (openapi-generator),jsluice,0.0000,0.0000,0,331
+generated (openapi-generator),relwarc,0.0000,0.0000,0,331
+generated (openapi-generator),lynx,0.0000,0.0000,0,331
+route-builder functions,linkfinder,0.0455,0.2353,11,242
+route-builder functions,jsluice,0.0455,0.3636,11,242
+route-builder functions,relwarc,0.0000,0.0000,0,242
+route-builder functions,lynx,0.0000,0.0000,0,242
+generated (stainless),linkfinder,0.1393,0.1925,588,4221
+generated (stainless),jsluice,0.1391,0.1941,587,4221
+generated (stainless),relwarc,0.0000,0.0000,0,4221
+generated (stainless),lynx,0.7086,0.9736,2991,4221
+hand-written managers,linkfinder,0.4122,0.1210,122,296
+hand-written managers,jsluice,0.4122,0.1215,122,296
+hand-written managers,relwarc,0.0000,0.0000,0,296
+hand-written managers,lynx,0.0000,0.0000,0,296
+generated service-class,linkfinder,0.0000,0.0000,0,28
+generated service-class,jsluice,0.0000,0.0000,0,28
+generated service-class,relwarc,0.0000,0.0000,0,28
+generated service-class,lynx,0.0000,0.0000,0,28
+discovery-generated,linkfinder,0.9902,0.0029,101,102
+discovery-generated,jsluice,0.3137,0.0090,32,102
+discovery-generated,relwarc,0.0000,0.0000,0,102
+discovery-generated,lynx,0.0000,0.0000,0,102
+hand-written,linkfinder,0.1117,0.2426,102,913
+hand-written,jsluice,0.1172,0.2864,107,913
+hand-written,relwarc,0.0000,0.0000,0,913
+hand-written,lynx,0.0964,0.9200,88,913
+generic request,linkfinder,0.0108,0.5417,5,465
+generic request,jsluice,0.0108,0.6500,5,465
+generic request,relwarc,0.0000,0.0000,0,465
+generic request,lynx,0.0108,0.8182,5,465
+generated (speakeasy),linkfinder,1.0000,0.0980,70,70
+generated (speakeasy),jsluice,0.5857,0.0545,41,70
+generated (speakeasy),relwarc,0.0000,0.0000,0,70
+generated (speakeasy),lynx,0.0000,0.0000,0,70
+generated (autorest),linkfinder,0.0000,0.0000,0,6
+generated (autorest),jsluice,0.0000,0.0000,0,6
+generated (autorest),relwarc,0.0000,0.0000,0,6
+generated (autorest),lynx,0.0000,0.0000,0,6

@@ -1,0 +1,921 @@
+{
+  "note": "Prevalence of each LyN-X sink TYPE across the crawled sites, split by whether the URL points same-host (first-party) or external (third-party). Unit = distinct (site, endpoint, sink). 'codeql' = the sink type is in CodeQL's ClientRequest model (fetch/xhr/known libs); the rest are LyN-X-only sink types.",
+  "codeql_covered_total": 621997,
+  "lynx_only_total": 4990120,
+  "lynx_only_sink_types": 99,
+  "codeql_sink_types": 15,
+  "sinks": [
+    {
+      "sink": "script",
+      "first": 1791942,
+      "third": 204873,
+      "total": 1996815,
+      "third_frac": 0.1026,
+      "codeql": false
+    },
+    {
+      "sink": "src",
+      "first": 993705,
+      "third": 703873,
+      "total": 1697578,
+      "third_frac": 0.4146,
+      "codeql": false
+    },
+    {
+      "sink": "fetch",
+      "first": 109106,
+      "third": 243820,
+      "total": 352926,
+      "third_frac": 0.6909,
+      "codeql": true
+    },
+    {
+      "sink": "link",
+      "first": 317815,
+      "third": 30229,
+      "total": 348044,
+      "third_frac": 0.0869,
+      "codeql": false
+    },
+    {
+      "sink": "img",
+      "first": 69733,
+      "third": 124859,
+      "total": 194592,
+      "third_frac": 0.6416,
+      "codeql": false
+    },
+    {
+      "sink": "href",
+      "first": 128259,
+      "third": 59678,
+      "total": 187937,
+      "third_frac": 0.3175,
+      "codeql": false
+    },
+    {
+      "sink": "iframe",
+      "first": 95514,
+      "third": 71426,
+      "total": 166940,
+      "third_frac": 0.4279,
+      "codeql": false
+    },
+    {
+      "sink": "import",
+      "first": 153659,
+      "third": 1717,
+      "total": 155376,
+      "third_frac": 0.0111,
+      "codeql": false
+    },
+    {
+      "sink": "location.href",
+      "first": 101182,
+      "third": 20468,
+      "total": 121650,
+      "third_frac": 0.1683,
+      "codeql": false
+    },
+    {
+      "sink": "rest.method",
+      "first": 23421,
+      "third": 87527,
+      "total": 110948,
+      "third_frac": 0.7889,
+      "codeql": true
+    },
+    {
+      "sink": "xhr.open",
+      "first": 19171,
+      "third": 33278,
+      "total": 52449,
+      "third_frac": 0.6345,
+      "codeql": true
+    },
+    {
+      "sink": "window.open",
+      "first": 14364,
+      "third": 31457,
+      "total": 45821,
+      "third_frac": 0.6865,
+      "codeql": false
+    },
+    {
+      "sink": "rest.post",
+      "first": 34321,
+      "third": 607,
+      "total": 34928,
+      "third_frac": 0.0174,
+      "codeql": true
+    },
+    {
+      "sink": "navigator.sendBeacon",
+      "first": 20681,
+      "third": 12645,
+      "total": 33326,
+      "third_frac": 0.3794,
+      "codeql": false
+    },
+    {
+      "sink": "location",
+      "first": 4288,
+      "third": 19693,
+      "total": 23981,
+      "third_frac": 0.8212,
+      "codeql": false
+    },
+    {
+      "sink": "rest.get",
+      "first": 17726,
+      "third": 1096,
+      "total": 18822,
+      "third_frac": 0.0582,
+      "codeql": true
+    },
+    {
+      "sink": "rest.config",
+      "first": 15708,
+      "third": 2029,
+      "total": 17737,
+      "third_frac": 0.1144,
+      "codeql": true
+    },
+    {
+      "sink": "$.ajax",
+      "first": 11194,
+      "third": 2030,
+      "total": 13224,
+      "third_frac": 0.1535,
+      "codeql": true
+    },
+    {
+      "sink": "$.get",
+      "first": 9671,
+      "third": 272,
+      "total": 9943,
+      "third_frac": 0.0274,
+      "codeql": true
+    },
+    {
+      "sink": "rest.put",
+      "first": 3978,
+      "third": 4,
+      "total": 3982,
+      "third_frac": 0.001,
+      "codeql": true
+    },
+    {
+      "sink": "$.getJSON",
+      "first": 3524,
+      "third": 322,
+      "total": 3846,
+      "third_frac": 0.0837,
+      "codeql": true
+    },
+    {
+      "sink": "Worker",
+      "first": 3179,
+      "third": 579,
+      "total": 3758,
+      "third_frac": 0.1541,
+      "codeql": false
+    },
+    {
+      "sink": "location.replace",
+      "first": 1416,
+      "third": 2154,
+      "total": 3570,
+      "third_frac": 0.6034,
+      "codeql": false
+    },
+    {
+      "sink": "history.pushState",
+      "first": 1598,
+      "third": 313,
+      "total": 1911,
+      "third_frac": 0.1638,
+      "codeql": false
+    },
+    {
+      "sink": "location.assign",
+      "first": 742,
+      "third": 626,
+      "total": 1368,
+      "third_frac": 0.4576,
+      "codeql": false
+    },
+    {
+      "sink": "importScripts",
+      "first": 486,
+      "third": 818,
+      "total": 1304,
+      "third_frac": 0.6273,
+      "codeql": false
+    },
+    {
+      "sink": "history.replaceState",
+      "first": 1185,
+      "third": 93,
+      "total": 1278,
+      "third_frac": 0.0728,
+      "codeql": false
+    },
+    {
+      "sink": "video",
+      "first": 383,
+      "third": 749,
+      "total": 1132,
+      "third_frac": 0.6617,
+      "codeql": false
+    },
+    {
+      "sink": "$.post",
+      "first": 892,
+      "third": 97,
+      "total": 989,
+      "third_frac": 0.0981,
+      "codeql": true
+    },
+    {
+      "sink": "rest.request",
+      "first": 901,
+      "third": 37,
+      "total": 938,
+      "third_frac": 0.0394,
+      "codeql": true
+    },
+    {
+      "sink": "$.getScript",
+      "first": 311,
+      "third": 413,
+      "total": 724,
+      "third_frac": 0.5704,
+      "codeql": false
+    },
+    {
+      "sink": "rest.delete",
+      "first": 713,
+      "third": 8,
+      "total": 721,
+      "third_frac": 0.0111,
+      "codeql": true
+    },
+    {
+      "sink": "WebSocket",
+      "first": 266,
+      "third": 325,
+      "total": 591,
+      "third_frac": 0.5499,
+      "codeql": false
+    },
+    {
+      "sink": "open",
+      "first": 481,
+      "third": 20,
+      "total": 501,
+      "third_frac": 0.0399,
+      "codeql": false
+    },
+    {
+      "sink": "rest.patch",
+      "first": 442,
+      "third": 0,
+      "total": 442,
+      "third_frac": 0,
+      "codeql": true
+    },
+    {
+      "sink": "axios.get",
+      "first": 307,
+      "third": 4,
+      "total": 311,
+      "third_frac": 0.0129,
+      "codeql": false
+    },
+    {
+      "sink": "source",
+      "first": 185,
+      "third": 86,
+      "total": 271,
+      "third_frac": 0.3173,
+      "codeql": false
+    },
+    {
+      "sink": "audio",
+      "first": 93,
+      "third": 173,
+      "total": 266,
+      "third_frac": 0.6504,
+      "codeql": false
+    },
+    {
+      "sink": "send",
+      "first": 216,
+      "third": 18,
+      "total": 234,
+      "third_frac": 0.0769,
+      "codeql": false
+    },
+    {
+      "sink": "axios.post",
+      "first": 201,
+      "third": 31,
+      "total": 232,
+      "third_frac": 0.1336,
+      "codeql": false
+    },
+    {
+      "sink": "EventSource",
+      "first": 90,
+      "third": 129,
+      "total": 219,
+      "third_frac": 0.589,
+      "codeql": false
+    },
+    {
+      "sink": "request",
+      "first": 90,
+      "third": 12,
+      "total": 102,
+      "third_frac": 0.1176,
+      "codeql": true
+    },
+    {
+      "sink": "object",
+      "first": 1,
+      "third": 42,
+      "total": 43,
+      "third_frac": 0.9767,
+      "codeql": false
+    },
+    {
+      "sink": "setOpen",
+      "first": 37,
+      "third": 0,
+      "total": 37,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsOpen",
+      "first": 33,
+      "third": 0,
+      "total": 33,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "isDialogOpen",
+      "first": 33,
+      "third": 0,
+      "total": 33,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "script-src",
+      "first": 0,
+      "third": 15,
+      "total": 15,
+      "third_frac": 1,
+      "codeql": false
+    },
+    {
+      "sink": "isWidgetOpen",
+      "first": 14,
+      "third": 0,
+      "total": 14,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "SharedWorker",
+      "first": 11,
+      "third": 1,
+      "total": 12,
+      "third_frac": 0.0833,
+      "codeql": false
+    },
+    {
+      "sink": "axios.delete",
+      "first": 12,
+      "third": 0,
+      "total": 12,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "http.get",
+      "first": 12,
+      "third": 0,
+      "total": 12,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "embed",
+      "first": 7,
+      "third": 4,
+      "total": 11,
+      "third_frac": 0.3636,
+      "codeql": false
+    },
+    {
+      "sink": "debouncedToggleOpen",
+      "first": 10,
+      "third": 0,
+      "total": 10,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "isSimilarPopupOpen",
+      "first": 8,
+      "third": 0,
+      "total": 8,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "assignIsOpen",
+      "first": 8,
+      "third": 0,
+      "total": 8,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "novaModalOpen",
+      "first": 8,
+      "third": 0,
+      "total": 8,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsAnyTippyOpen",
+      "first": 8,
+      "third": 0,
+      "total": 8,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "popupOpen",
+      "first": 7,
+      "third": 0,
+      "total": 7,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "pgModalOpen",
+      "first": 7,
+      "third": 0,
+      "total": 7,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "win_open",
+      "first": 7,
+      "third": 0,
+      "total": 7,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "ModalBoxOpen",
+      "first": 6,
+      "third": 0,
+      "total": 6,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "share_open",
+      "first": 0,
+      "third": 6,
+      "total": 6,
+      "third_frac": 1,
+      "codeql": false
+    },
+    {
+      "sink": "toggleOpen",
+      "first": 5,
+      "third": 0,
+      "total": 5,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "axios.patch",
+      "first": 4,
+      "third": 0,
+      "total": 4,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "SCBopen",
+      "first": 4,
+      "third": 0,
+      "total": 4,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "idbOpen",
+      "first": 3,
+      "third": 0,
+      "total": 3,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setPopupIsOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setFiltersDialogOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsDropdownOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setSuggestionsOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "checkIfOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "axios.put",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setAuthDialogOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setPlayersSearchOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsShareWindowOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setCartOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setPlayerSearchAutcompleteOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setClubSearchOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setOrganizerSearchOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setTeacherSearchOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setUserSearchOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setLmAssigmentFormOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setStateMenuIsOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "applyPanelOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setFeedBackModalOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsWindowOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setLocationDrawerOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setDateDrawerOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setGeoPopupOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setFollowedArtistAlertOverlayOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setIsModalOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "$.getJson",
+      "first": 0,
+      "third": 2,
+      "total": 2,
+      "third_frac": 1,
+      "codeql": false
+    },
+    {
+      "sink": "triggerOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setDeferredOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "reflistOpen",
+      "first": 2,
+      "third": 0,
+      "total": 2,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "handleSetOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setMenuOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "handleOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "windowOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "set_IsResetModalOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "clSidenavOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "modalOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "handleModalOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "startRetryOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "login_open",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "novaOffcanvasOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setMobileMenuOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "scheduleContextualOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setViewBulkModalOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "customModal_open",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "axios.head",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "setMoreOpen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "popopen",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    },
+    {
+      "sink": "trigger_default_open",
+      "first": 1,
+      "third": 0,
+      "total": 1,
+      "third_frac": 0,
+      "codeql": false
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+[
+ {
+  "sdk": "stripe",
+  "files": 1,
+  "counts": {
+   "baseline": 405,
+   "template": 143,
+   "concat": 405,
+   "member": 405,
+   "interproc": 405,
+   "iteration": 405,
+   "array_join": 405,
+   "atob": 405,
+   "fromCharCode": 405,
+   "str_transform": 405,
+   "str_replace": 405,
+   "new_url": 405,
+   "query_params": 405,
+   "promise": 405
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "openai",
+  "files": 1,
+  "counts": {
+   "baseline": 151,
+   "template": 57,
+   "concat": 151,
+   "member": 151,
+   "interproc": 151,
+   "iteration": 151,
+   "array_join": 151,
+   "atob": 151,
+   "fromCharCode": 151,
+   "str_transform": 151,
+   "str_replace": 151,
+   "new_url": 151,
+   "query_params": 151,
+   "promise": 151
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "cloudflare",
+  "files": 624,
+  "counts": {
+   "baseline": 1070,
+   "template": 17,
+   "concat": 1070,
+   "member": 1070,
+   "interproc": 1070,
+   "iteration": 1070,
+   "array_join": 1070,
+   "atob": 1070,
+   "fromCharCode": 1070,
+   "str_transform": 1070,
+   "str_replace": 1070,
+   "new_url": 1070,
+   "query_params": 1070,
+   "promise": 1070
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "mux",
+  "files": 22,
+  "counts": {
+   "baseline": 78,
+   "template": 17,
+   "concat": 78,
+   "member": 78,
+   "interproc": 78,
+   "iteration": 78,
+   "array_join": 78,
+   "atob": 78,
+   "fromCharCode": 78,
+   "str_transform": 78,
+   "str_replace": 78,
+   "new_url": 78,
+   "query_params": 78,
+   "promise": 78
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "lithic",
+  "files": 45,
+  "counts": {
+   "baseline": 131,
+   "template": 28,
+   "concat": 131,
+   "member": 131,
+   "interproc": 131,
+   "iteration": 131,
+   "array_join": 131,
+   "atob": 131,
+   "fromCharCode": 131,
+   "str_transform": 131,
+   "str_replace": 131,
+   "new_url": 131,
+   "query_params": 131,
+   "promise": 131
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "modern-treasury",
+  "files": 39,
+  "counts": {
+   "baseline": 83,
+   "template": 28,
+   "concat": 83,
+   "member": 83,
+   "interproc": 83,
+   "iteration": 83,
+   "array_join": 83,
+   "atob": 83,
+   "fromCharCode": 83,
+   "str_transform": 83,
+   "str_replace": 83,
+   "new_url": 83,
+   "query_params": 83,
+   "promise": 83
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "orb",
+  "files": 29,
+  "counts": {
+   "baseline": 98,
+   "template": 19,
+   "concat": 98,
+   "member": 98,
+   "interproc": 98,
+   "iteration": 98,
+   "array_join": 98,
+   "atob": 98,
+   "fromCharCode": 98,
+   "str_transform": 98,
+   "str_replace": 98,
+   "new_url": 98,
+   "query_params": 98,
+   "promise": 98
+  },
+  "errs": {}
+ },
+ {
+  "sdk": "increase",
+  "files": 1,
+  "counts": {
+   "baseline": 177,
+   "template": 59,
+   "concat": 177,
+   "member": 177,
+   "interproc": 177,
+   "iteration": 177,
+   "array_join": 177,
+   "atob": 177,
+   "fromCharCode": 177,
+   "str_transform": 177,
+   "str_replace": 177,
+   "new_url": 177,
+   "query_params": 177,
+   "promise": 177
+  },
+  "errs": {}
+ }
+]

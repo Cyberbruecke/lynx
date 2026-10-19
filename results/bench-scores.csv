@@ -1,0 +1,241 @@
+tool,scope,gt_urls,P_s,R_s,F1_s,P_m,R_m,F1_m,P_r,R_r,F1_r,DG,ADG
+LinkFinder,literal,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,compound-assignment (+=),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.3333,1.0000,0.5000,2.00,2.00
+LinkFinder,single-expression concat,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,1.0000,0.6667,1.00,1.00
+LinkFinder,template (runtime-unknown),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,object config (URL from property),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,computed member sink (window[m]),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,IIFE / closure variants,6,0.7143,0.8333,0.7692,0.7143,0.8333,0.7692,0.8571,1.0000,0.9231,0.17,0.17
+LinkFinder,loop-built path + URLSearchParams,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,loop (for-of) — construct endpoint per element,3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.3333,0.5000,0.00,0.00
+LinkFinder,loop (Array.forEach) — construct endpoint per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,0.5000,0.5000,0.50,0.50
+LinkFinder,loop (forEach) — script.src resource per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.5000,0.6667,0.00,0.00
+LinkFinder,conditional (path-sensitive protocol),2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.50,0.50
+LinkFinder,conditional (path-sensitive cartesian),4,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.3333,0.2500,0.2857,0.50,0.50
+LinkFinder,base64 (atob),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,char codes (String.fromCharCode),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,array reassembly (.join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,reversed string (split/reverse/join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,custom decoder (interprocedural),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,case transform (toLowerCase),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+LinkFinder,combined (atob + join + concat),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+LinkFinder,"REST dispatch (client.post(""/path""))",1,0.3333,1.0000,0.5000,0.3333,1.0000,0.5000,0.6667,1.0000,0.8000,1.00,1.00
+LinkFinder,"positional (method, path) builder",1,0.5000,1.0000,0.6667,0.5000,1.0000,0.6667,0.5000,1.0000,0.6667,1.00,1.00
+LinkFinder,enum method + variable path (openapi-gen),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"request-config object ({method,url})",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"combined ""VERB /path"" route string",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,tagged-template parameterized route,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,"string rewrite (.replace lit,lit)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+LinkFinder,templated .replace (SDK param),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,2.00,2.00
+LinkFinder,encodeURIComponent (query),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"XMLHttpRequest.open(method,url)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,new WebSocket(url),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,location.href navigation,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,navigator.sendBeacon(url),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,element.src resource load,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,import(url) dynamic module,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,collection widening (list index),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.3333,0.5000,0.00,0.00
+LinkFinder,collection widening (map key),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+LinkFinder,collection build (Object.assign map merge),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+LinkFinder,collection build (imperative map),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+LinkFinder,iteration forward (forEach -> wrapper),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+LinkFinder,"new URL(relative, base)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,promise .then callback return,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,$.ajax data object folded to query string,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,$.post URL from base-var + literal concat,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,1.0000,0.6667,1.00,1.00
+LinkFinder,$.ajax URL-from-var + data-string query,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,deep interprocedural taint with shadowing,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,interprocedural + path-sensitive call graph,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+LinkFinder,$.get params object built by property assignment,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,"$.ajax POST with FormData body, literal URL",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,SUITE:cases,44,0.2273,0.2273,0.2273,0.2273,0.2273,0.2273,0.5455,0.5455,0.5455,0.45,0.45
+LinkFinder,SUITE:obfuscation,10,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.1667,0.1000,0.1250,0.50,0.50
+LinkFinder,SUITE:dispatch,6,0.5714,0.6667,0.6154,0.5714,0.6667,0.6154,0.7143,0.6667,0.6897,0.33,0.33
+LinkFinder,SUITE:sinks,10,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LinkFinder,SUITE:relwarc,7,0.7143,0.7143,0.7143,0.7143,0.7143,0.7143,0.8571,0.8571,0.8571,0.14,0.14
+LinkFinder,OVERALL,77,0.3919,0.3766,0.3841,0.3919,0.3766,0.3841,0.6216,0.5844,0.6024,0.36,0.36
+JSluice,literal,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,compound-assignment (+=),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.3333,1.0000,0.5000,2.00,2.00
+JSluice,single-expression concat,1,0.3333,1.0000,0.5000,0.3333,1.0000,0.5000,0.6667,1.0000,0.8000,1.00,1.00
+JSluice,template (runtime-unknown),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,object config (URL from property),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,computed member sink (window[m]),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,IIFE / closure variants,6,0.7500,0.8333,0.7895,0.7500,0.8333,0.7895,0.8750,1.0000,0.9333,0.17,0.17
+JSluice,loop-built path + URLSearchParams,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,loop (for-of) — construct endpoint per element,3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.3333,0.5000,0.00,0.00
+JSluice,loop (Array.forEach) — construct endpoint per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,0.5000,0.5000,0.50,0.50
+JSluice,loop (forEach) — script.src resource per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.5000,0.6667,0.00,0.00
+JSluice,conditional (path-sensitive protocol),2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.50,0.50
+JSluice,conditional (path-sensitive cartesian),4,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,0.2500,0.4000,0.00,0.00
+JSluice,base64 (atob),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,char codes (String.fromCharCode),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,array reassembly (.join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,reversed string (split/reverse/join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,custom decoder (interprocedural),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,case transform (toLowerCase),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,1.0000,0.6667,1.00,1.00
+JSluice,combined (atob + join + concat),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,"REST dispatch (client.post(""/path""))",1,0.5000,1.0000,0.6667,0.5000,1.0000,0.6667,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"positional (method, path) builder",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,enum method + variable path (openapi-gen),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"request-config object ({method,url})",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"combined ""VERB /path"" route string",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,tagged-template parameterized route,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,"string rewrite (.replace lit,lit)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+JSluice,templated .replace (SDK param),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,encodeURIComponent (query),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"XMLHttpRequest.open(method,url)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,new WebSocket(url),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,location.href navigation,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,navigator.sendBeacon(url),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,element.src resource load,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,import(url) dynamic module,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,collection widening (list index),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+JSluice,collection widening (map key),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+JSluice,collection build (Object.assign map merge),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+JSluice,collection build (imperative map),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.2500,0.3333,0.2857,1.00,1.00
+JSluice,iteration forward (forEach -> wrapper),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.4000,0.3333,0.3636,1.00,1.00
+JSluice,"new URL(relative, base)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,promise .then callback return,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,$.ajax data object folded to query string,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,$.post URL from base-var + literal concat,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,$.ajax URL-from-var + data-string query,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,deep interprocedural taint with shadowing,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,interprocedural + path-sensitive call graph,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+JSluice,$.get params object built by property assignment,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,"$.ajax POST with FormData body, literal URL",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+JSluice,SUITE:cases,44,0.2653,0.2500,0.2574,0.2653,0.2500,0.2574,0.5714,0.5455,0.5581,0.48,0.48
+JSluice,SUITE:obfuscation,10,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.5000,0.2000,0.2857,0.20,0.20
+JSluice,SUITE:dispatch,6,0.8000,0.6667,0.7273,0.8000,0.6667,0.7273,1.0000,0.6667,0.8000,0.00,0.00
+JSluice,SUITE:sinks,10,1.0000,0.9000,0.9474,1.0000,0.9000,0.9474,1.0000,0.9000,0.9474,0.00,0.00
+JSluice,SUITE:relwarc,7,0.8333,0.7143,0.7692,0.8333,0.7143,0.7692,1.0000,0.8571,0.9231,0.00,0.00
+JSluice,OVERALL,77,0.4247,0.3766,0.3992,0.4247,0.3766,0.3992,0.6849,0.5844,0.6307,0.30,0.30
+relwarc,literal,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,compound-assignment (+=),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,single-expression concat,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,template (runtime-unknown),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+relwarc,object config (URL from property),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,computed member sink (window[m]),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,IIFE / closure variants,6,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,loop-built path + URLSearchParams,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+relwarc,loop (for-of) — construct endpoint per element,3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.33,0.33
+relwarc,loop (Array.forEach) — construct endpoint per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.50,0.50
+relwarc,loop (forEach) — script.src resource per element,2,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,conditional (path-sensitive protocol),2,0.6667,0.5000,0.5714,0.6667,0.5000,0.5714,0.6667,0.5000,0.5714,0.50,0.50
+relwarc,conditional (path-sensitive cartesian),4,0.6667,0.5000,0.5714,0.6667,0.5000,0.5714,0.6667,0.5000,0.5714,0.25,0.25
+relwarc,base64 (atob),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,char codes (String.fromCharCode),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,array reassembly (.join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,reversed string (split/reverse/join),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,custom decoder (interprocedural),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,case transform (toLowerCase),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,combined (atob + join + concat),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,"REST dispatch (client.post(""/path""))",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"positional (method, path) builder",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,enum method + variable path (openapi-gen),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"request-config object ({method,url})",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"combined ""VERB /path"" route string",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,tagged-template parameterized route,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"string rewrite (.replace lit,lit)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,templated .replace (SDK param),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.00,1.00
+relwarc,encodeURIComponent (query),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,"XMLHttpRequest.open(method,url)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,new WebSocket(url),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,location.href navigation,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,navigator.sendBeacon(url),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,element.src resource load,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,import(url) dynamic module,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,collection widening (list index),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,collection widening (map key),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.33,0.33
+relwarc,collection build (Object.assign map merge),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.33,0.33
+relwarc,collection build (imperative map),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.33,0.33
+relwarc,iteration forward (forEach -> wrapper),3,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,"new URL(relative, base)",1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,promise .then callback return,1,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,$.ajax data object folded to query string,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,$.post URL from base-var + literal concat,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,$.ajax URL-from-var + data-string query,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,deep interprocedural taint with shadowing,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,interprocedural + path-sensitive call graph,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,$.get params object built by property assignment,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,"$.ajax POST with FormData body, literal URL",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,SUITE:cases,44,0.5000,0.1818,0.2667,0.5000,0.1818,0.2667,0.5000,0.1818,0.2667,0.20,0.20
+relwarc,SUITE:obfuscation,10,0.7500,0.3000,0.4286,0.7500,0.3000,0.4286,0.7500,0.3000,0.4286,0.10,0.10
+relwarc,SUITE:dispatch,6,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.00,0.00
+relwarc,SUITE:sinks,10,1.0000,0.2000,0.3333,1.0000,0.2000,0.3333,1.0000,0.2000,0.3333,0.00,0.00
+relwarc,SUITE:relwarc,7,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+relwarc,OVERALL,77,0.7436,0.2597,0.3850,0.7436,0.2597,0.3850,0.7436,0.2597,0.3850,0.13,0.13
+LyN-X,literal,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,compound-assignment (+=),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,single-expression concat,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,template (runtime-unknown),1,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,object config (URL from property),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,computed member sink (window[m]),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,IIFE / closure variants,6,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,loop-built path + URLSearchParams,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,loop (for-of) — construct endpoint per element,3,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,loop (Array.forEach) — construct endpoint per element,2,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,loop (forEach) — script.src resource per element,2,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,conditional (path-sensitive protocol),2,1.0000,0.5000,0.6667,1.0000,0.5000,0.6667,1.0000,0.5000,0.6667,0.00,0.00
+LyN-X,conditional (path-sensitive cartesian),4,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,base64 (atob),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,char codes (String.fromCharCode),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,array reassembly (.join),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,reversed string (split/reverse/join),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,custom decoder (interprocedural),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,case transform (toLowerCase),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,combined (atob + join + concat),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"REST dispatch (client.post(""/path""))",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"positional (method, path) builder",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,enum method + variable path (openapi-gen),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"request-config object ({method,url})",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"combined ""VERB /path"" route string",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,tagged-template parameterized route,1,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"string rewrite (.replace lit,lit)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,templated .replace (SDK param),1,0.0000,0.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,encodeURIComponent (query),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"XMLHttpRequest.open(method,url)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,new WebSocket(url),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,location.href navigation,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,navigator.sendBeacon(url),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,element.src resource load,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,import(url) dynamic module,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,collection widening (list index),3,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,collection widening (map key),3,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,collection build (Object.assign map merge),3,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,collection build (imperative map),3,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,iteration forward (forEach -> wrapper),3,0.7500,1.0000,0.8571,0.7500,1.0000,0.8571,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"new URL(relative, base)",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,promise .then callback return,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,$.ajax data object folded to query string,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,$.post URL from base-var + literal concat,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,$.ajax URL-from-var + data-string query,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,deep interprocedural taint with shadowing,1,0.3333,1.0000,0.5000,0.3333,1.0000,0.5000,0.3333,1.0000,0.5000,2.00,1.00
+LyN-X,interprocedural + path-sensitive call graph,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,$.get params object built by property assignment,1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,"$.ajax POST with FormData body, literal URL",1,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,SUITE:cases,44,0.9556,0.9545,0.9551,0.9778,0.9773,0.9775,1.0000,0.9773,0.9885,0.00,0.00
+LyN-X,SUITE:obfuscation,10,0.9000,0.9000,0.9000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,SUITE:dispatch,6,0.8333,0.8333,0.8333,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,SUITE:sinks,10,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.00,0.00
+LyN-X,SUITE:relwarc,7,0.8889,1.0000,0.9412,0.8889,1.0000,0.9412,0.8889,1.0000,0.9412,0.29,0.14
+LyN-X,OVERALL,77,0.9326,0.9481,0.9403,0.9663,0.9870,0.9765,0.9775,0.9870,0.9822,0.03,0.01

@@ -1,0 +1,217 @@
+tool,suite,category,file,best_tier,extracted
+LinkFinder,cases,literal,cases/literal.js,exact,https://api.example.com/v1/users
+LinkFinder,cases,single-expression concat,cases/single_expr_concat.js,weak,https://api.example.com | https://example.com/v1/users
+LinkFinder,cases,computed member sink (window[m]),cases/computed_member_sink.js,exact,http://malicious.com
+LinkFinder,cases,compound-assignment (+=),cases/plus_equals.js,weak,https://api.example.com | https://example.com/v1 | https://example.com/users
+LinkFinder,cases,template (runtime-unknown),cases/template_unresolved.js,miss,
+LinkFinder,cases,IIFE / closure variants,cases/iife_scenarios.js,exact,https://iife1.example.com/a.js | https://iife2.example.com/api | https://example.com/users | https://iife3.example.com | https://iife4.example.com/default | https://iife5.example.com/search? | https://iife6.example.com/member-alias
+LinkFinder,obfuscation,custom decoder (interprocedural),cases/obf_custom_decoder.js,miss,
+LinkFinder,obfuscation,case transform (toLowerCase),cases/obf_string_transform.js,miss,https://example.com/v1/users
+LinkFinder,cases,object config (URL from property),cases/object_config.js,exact,https://api.example.com/v1/users
+LinkFinder,obfuscation,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,cases/obf_substring.js,miss,padhttps://api.example.com/v1/users
+LinkFinder,obfuscation,array reassembly (.join),cases/obf_array_join.js,weak,https://api.example.com
+LinkFinder,obfuscation,char codes (String.fromCharCode),cases/obf_fromcharcode.js,miss,
+LinkFinder,cases,loop (for-of) — construct endpoint per element,cases/loop_forof_construct.js,weak,https://api.example.com/v1
+LinkFinder,cases,conditional (path-sensitive protocol),cases/conditional_protocol.js,miss,https://example.com/users/1
+LinkFinder,cases,loop-built path + URLSearchParams,cases/loop_urlsearchparams.js,weak,https://api.store.com
+LinkFinder,cases,loop (forEach) — script.src resource per element,cases/loop_map_resource.js,weak,https://cdn.example.com/dist
+LinkFinder,cases,loop (Array.forEach) — construct endpoint per element,cases/loop_foreach_construct.js,weak,https://api.example.com | https://example.com/status
+LinkFinder,obfuscation,base64 (atob),cases/obf_atob.js,miss,
+LinkFinder,cases,conditional (path-sensitive cartesian),cases/conditional_path.js,weak,https://api.store.com | https://example.com/management/inventory | https://example.com/public/catalog
+LinkFinder,dispatch,"REST dispatch (client.post(""/path""))",cases/rest_verb_method.js,exact,https://api.example.com/path | https://api.example.com | https://api.example.com/v1/users
+LinkFinder,obfuscation,combined (atob + join + concat),cases/obf_combined.js,miss,
+LinkFinder,dispatch,"combined ""VERB /path"" route string",cases/rest_verb_string.js,miss,
+LinkFinder,obfuscation,templated .replace (SDK param),cases/obf_replace_templated.js,miss,https://api.example.com/1/indexes/%7BindexName%7D | https://api.example.com/1/indexes/%7BindexName%7D/objects
+LinkFinder,dispatch,enum method + variable path (openapi-gen),cases/rest_enum_var_path.js,exact,https://api.example.com/v1/users
+LinkFinder,obfuscation,reversed string (split/reverse/join),cases/obf_split_reverse.js,miss,
+LinkFinder,dispatch,"request-config object ({method,url})",cases/rest_config_object.js,exact,https://api.example.com/v1/users
+LinkFinder,cases,encodeURIComponent (query),cases/encode_uri_component.js,exact,https://api.example.com/search?q=
+LinkFinder,sinks,new WebSocket(url),cases/sink_websocket.js,exact,wss://api.example.com/stream
+LinkFinder,sinks,location.href navigation,cases/sink_location.js,exact,https://api.example.com/account/logout
+LinkFinder,sinks,import(url) dynamic module,cases/sink_dynamic_import.js,exact,https://api.example.com/modules/dashboard.js
+LinkFinder,relwarc,$.ajax data object folded to query string,relwarc-cases/04_ajax_data_object.js,exact,http://example.com/application/aet0Mu/interface/MooS8u/handle
+LinkFinder,sinks,element.src resource load,cases/sink_element_src.js,exact,https://api.example.com/assets/loader.js
+LinkFinder,dispatch,tagged-template parameterized route,cases/rest_tagged_template.js,miss,
+LinkFinder,sinks,"XMLHttpRequest.open(method,url)",cases/sink_xhr_open.js,exact,https://api.example.com/v1/users
+LinkFinder,sinks,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),cases/sink_location_assign.js,exact,https://api.example.com/account/login
+LinkFinder,sinks,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",cases/sink_window_open.js,exact,https://api.example.com/oauth/authorize
+LinkFinder,dispatch,"positional (method, path) builder",cases/rest_positional_pair.js,exact,https://api.example.com/path | https://api.example.com/v1/users
+LinkFinder,obfuscation,"string rewrite (.replace lit,lit)",cases/obf_replace.js,miss,https://api.example.com/api/__VER__/users
+LinkFinder,sinks,navigator.sendBeacon(url),cases/sink_sendbeacon.js,exact,https://api.example.com/collect/metrics
+LinkFinder,sinks,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",cases/sink_importscripts.js,exact,https://api.example.com/workers/analytics.js
+LinkFinder,cases,"new URL(relative, base)",cases/new_url.js,weak,https://api.example.com/v1/
+LinkFinder,cases,collection widening (map key),cases/collection_map_widen.js,weak,https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search | https://api.example.com
+LinkFinder,cases,collection widening (list index),cases/collection_list_widen.js,weak,https://cdn.example.com/assets/
+LinkFinder,cases,iteration forward (forEach -> wrapper),cases/iter_forward_wrapper.js,weak,https://cdn.example.com | https://example.com/a/main.js | https://example.com/a/vendor.js | https://example.com/a/runtime.js
+LinkFinder,sinks,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",cases/sink_history_pushstate.js,exact,https://api.example.com/app/dashboard
+LinkFinder,relwarc,$.post URL from base-var + literal concat,relwarc-cases/05_post_concat_url.js,weak,http://example.com/application/iuT6ei/ | http://example.com/interface/Eek0Mu/handle
+LinkFinder,relwarc,interprocedural + path-sensitive call graph,relwarc-cases/09_interproc_path_sensitive.js,miss,
+LinkFinder,relwarc,deep interprocedural taint with shadowing,relwarc-cases/08_deep_interprocedural.js,exact,http://example.com/application/p0065n/interface/zbtghr/handle?
+LinkFinder,cases,collection build (Object.assign map merge),cases/collection_build_merge.js,weak,https://api.example.com | https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search
+LinkFinder,cases,collection build (imperative map),cases/collection_build_imperative.js,weak,https://api.example.com | https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search
+LinkFinder,cases,promise .then callback return,cases/promise_then.js,exact,https://api.example.com/v1/users
+LinkFinder,relwarc,"$.ajax POST with FormData body, literal URL",relwarc-cases/15_formdata_post.js,exact,http://example.com/application/j4b2yh/interface/9fdh32/handle
+LinkFinder,relwarc,$.ajax URL-from-var + data-string query,relwarc-cases/06_ajax_url_var_data_string.js,exact,http://example.com/application/gf32d2/interface/vcj442/handle
+LinkFinder,relwarc,$.get params object built by property assignment,relwarc-cases/12_get_object_params.js,exact,http://example.com/application/nh3k21/interface/hd73h4/handle
+JSluice,obfuscation,custom decoder (interprocedural),cases/obf_custom_decoder.js,miss,
+JSluice,obfuscation,reversed string (split/reverse/join),cases/obf_split_reverse.js,miss,
+JSluice,obfuscation,char codes (String.fromCharCode),cases/obf_fromcharcode.js,miss,
+JSluice,obfuscation,base64 (atob),cases/obf_atob.js,miss,
+JSluice,cases,template (runtime-unknown),cases/template_unresolved.js,miss,
+JSluice,obfuscation,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,cases/obf_substring.js,miss,
+JSluice,obfuscation,combined (atob + join + concat),cases/obf_combined.js,miss,
+JSluice,obfuscation,array reassembly (.join),cases/obf_array_join.js,weak,https://api.example.com
+JSluice,cases,conditional (path-sensitive cartesian),cases/conditional_path.js,weak,https://api.store.com
+JSluice,cases,conditional (path-sensitive protocol),cases/conditional_protocol.js,miss,https://example.com/users/1
+JSluice,cases,loop (forEach) — script.src resource per element,cases/loop_map_resource.js,weak,https://cdn.example.com/dist
+JSluice,cases,loop (Array.forEach) — construct endpoint per element,cases/loop_foreach_construct.js,weak,https://api.example.com | https://example.com/status
+JSluice,cases,loop (for-of) — construct endpoint per element,cases/loop_forof_construct.js,weak,https://api.example.com/v1
+JSluice,cases,loop-built path + URLSearchParams,cases/loop_urlsearchparams.js,weak,https://api.store.com
+JSluice,cases,IIFE / closure variants,cases/iife_scenarios.js,exact,https://iife1.example.com/a.js | https://iife2.example.com/api | https://iife3.example.com | https://example.com/users | https://iife4.example.com/default | https://iife5.example.com/search?{VAR:EXPR} | https://iife5.example.com/search? | https://iife6.example.com/member-alias
+JSluice,cases,computed member sink (window[m]),cases/computed_member_sink.js,exact,http://malicious.com
+JSluice,cases,object config (URL from property),cases/object_config.js,exact,https://api.example.com/v1/users
+JSluice,cases,single-expression concat,cases/single_expr_concat.js,exact,https://api.example.com/v1/users | https://api.example.com | https://example.com/v1/users
+JSluice,cases,compound-assignment (+=),cases/plus_equals.js,weak,https://api.example.com | https://example.com/v1 | https://example.com/users
+JSluice,cases,literal,cases/literal.js,exact,https://api.example.com/v1/users
+JSluice,sinks,new WebSocket(url),cases/sink_websocket.js,miss,
+JSluice,obfuscation,templated .replace (SDK param),cases/obf_replace_templated.js,miss,
+JSluice,dispatch,tagged-template parameterized route,cases/rest_tagged_template.js,miss,
+JSluice,dispatch,"combined ""VERB /path"" route string",cases/rest_verb_string.js,miss,
+JSluice,dispatch,enum method + variable path (openapi-gen),cases/rest_enum_var_path.js,exact,https://api.example.com/v1/users
+JSluice,dispatch,"positional (method, path) builder",cases/rest_positional_pair.js,exact,https://api.example.com/v1/users
+JSluice,dispatch,"REST dispatch (client.post(""/path""))",cases/rest_verb_method.js,exact,https://api.example.com | https://api.example.com/v1/users
+JSluice,obfuscation,case transform (toLowerCase),cases/obf_string_transform.js,weak,https://{VAR:EXPR}/v1/users | https://example.com/v1/users
+JSluice,sinks,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",cases/sink_importscripts.js,exact,https://api.example.com/workers/analytics.js
+JSluice,sinks,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",cases/sink_history_pushstate.js,exact,https://api.example.com/app/dashboard
+JSluice,sinks,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),cases/sink_location_assign.js,exact,https://api.example.com/account/login
+JSluice,sinks,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",cases/sink_window_open.js,exact,https://api.example.com/oauth/authorize
+JSluice,sinks,import(url) dynamic module,cases/sink_dynamic_import.js,exact,https://api.example.com/modules/dashboard.js
+JSluice,sinks,element.src resource load,cases/sink_element_src.js,exact,https://api.example.com/assets/loader.js
+JSluice,sinks,navigator.sendBeacon(url),cases/sink_sendbeacon.js,exact,https://api.example.com/collect/metrics
+JSluice,sinks,location.href navigation,cases/sink_location.js,exact,https://api.example.com/account/logout
+JSluice,sinks,"XMLHttpRequest.open(method,url)",cases/sink_xhr_open.js,exact,https://api.example.com/v1/users
+JSluice,cases,encodeURIComponent (query),cases/encode_uri_component.js,exact,https://api.example.com/search?q={VAR:EXPR} | https://api.example.com/search?q=
+JSluice,obfuscation,"string rewrite (.replace lit,lit)",cases/obf_replace.js,miss,https://api.example.com/api/__VER__/users
+JSluice,dispatch,"request-config object ({method,url})",cases/rest_config_object.js,exact,https://api.example.com/v1/users
+JSluice,relwarc,$.ajax data object folded to query string,relwarc-cases/04_ajax_data_object.js,exact,http://example.com/application/aet0Mu/interface/MooS8u/handle
+JSluice,cases,promise .then callback return,cases/promise_then.js,exact,https://api.example.com/v1/users
+JSluice,cases,"new URL(relative, base)",cases/new_url.js,weak,https://api.example.com/v1/
+JSluice,cases,iteration forward (forEach -> wrapper),cases/iter_forward_wrapper.js,weak,https://cdn.example.com{VAR:EXPR} | https://cdn.example.com | https://example.com/a/main.js | https://example.com/a/vendor.js | https://example.com/a/runtime.js
+JSluice,cases,collection build (imperative map),cases/collection_build_imperative.js,weak,https://api.example.com | https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search
+JSluice,cases,collection build (Object.assign map merge),cases/collection_build_merge.js,weak,https://api.example.com | https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search
+JSluice,cases,collection widening (map key),cases/collection_map_widen.js,weak,https://example.com/v1/items | https://example.com/v1/items/detail | https://example.com/v1/search | https://api.example.com
+JSluice,cases,collection widening (list index),cases/collection_list_widen.js,weak,https://example.com/main.9Us7.js | https://example.com/vendor.B0Y0.js | https://example.com/runtime.CvJI.js | https://cdn.example.com/assets/
+JSluice,relwarc,interprocedural + path-sensitive call graph,relwarc-cases/09_interproc_path_sensitive.js,miss,
+JSluice,relwarc,deep interprocedural taint with shadowing,relwarc-cases/08_deep_interprocedural.js,exact,http://example.com/application/p0065n/interface/zbtghr/handle?
+JSluice,relwarc,$.ajax URL-from-var + data-string query,relwarc-cases/06_ajax_url_var_data_string.js,exact,http://example.com/application/gf32d2/interface/vcj442/handle
+JSluice,relwarc,$.post URL from base-var + literal concat,relwarc-cases/05_post_concat_url.js,weak,http://example.com/application/iuT6ei/
+JSluice,relwarc,$.get params object built by property assignment,relwarc-cases/12_get_object_params.js,exact,http://example.com/application/nh3k21/interface/hd73h4/handle
+JSluice,relwarc,"$.ajax POST with FormData body, literal URL",relwarc-cases/15_formdata_post.js,exact,http://example.com/application/j4b2yh/interface/9fdh32/handle
+relwarc,cases,literal,cases/literal.js,exact,https://api.example.com/v1/users
+relwarc,cases,single-expression concat,cases/single_expr_concat.js,exact,https://api.example.com/v1/users
+relwarc,cases,loop (Array.forEach) — construct endpoint per element,cases/loop_foreach_construct.js,miss,https://api.example.com/UNKNOWN/status
+relwarc,cases,IIFE / closure variants,cases/iife_scenarios.js,miss,
+relwarc,cases,compound-assignment (+=),cases/plus_equals.js,exact,https://api.example.com/v1/users
+relwarc,cases,loop (forEach) — script.src resource per element,cases/loop_map_resource.js,miss,
+relwarc,cases,loop (for-of) — construct endpoint per element,cases/loop_forof_construct.js,miss,https://api.example.com/v1/undefined
+relwarc,cases,loop-built path + URLSearchParams,cases/loop_urlsearchparams.js,miss,https://api.store.com/v3/undefined?
+relwarc,cases,computed member sink (window[m]),cases/computed_member_sink.js,miss,
+relwarc,cases,template (runtime-unknown),cases/template_unresolved.js,miss,https://api.example.com/v1/UNKNOWN
+relwarc,cases,object config (URL from property),cases/object_config.js,exact,https://api.example.com/v1/users
+relwarc,cases,conditional (path-sensitive protocol),cases/conditional_protocol.js,exact,https://example.com/nulljsonplaceholder.typicode.com/users/1 | https://jsonplaceholder.typicode.com/users/1 | http://jsonplaceholder.typicode.com/users/1
+relwarc,obfuscation,char codes (String.fromCharCode),cases/obf_fromcharcode.js,miss,
+relwarc,cases,conditional (path-sensitive cartesian),cases/conditional_path.js,exact,https://api.store.com/v3//electronics | https://api.store.com/v3/management/inventory/electronics | https://api.store.com/v3/public/catalog/electronics
+relwarc,obfuscation,case transform (toLowerCase),cases/obf_string_transform.js,exact,https://api.example.com/v1/users
+relwarc,obfuscation,reversed string (split/reverse/join),cases/obf_split_reverse.js,miss,
+relwarc,dispatch,"REST dispatch (client.post(""/path""))",cases/rest_verb_method.js,miss,
+relwarc,dispatch,"combined ""VERB /path"" route string",cases/rest_verb_string.js,miss,
+relwarc,dispatch,"positional (method, path) builder",cases/rest_positional_pair.js,miss,
+relwarc,obfuscation,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,cases/obf_substring.js,exact,https://api.example.com/v1/users
+relwarc,obfuscation,combined (atob + join + concat),cases/obf_combined.js,miss,
+relwarc,sinks,navigator.sendBeacon(url),cases/sink_sendbeacon.js,miss,
+relwarc,obfuscation,array reassembly (.join),cases/obf_array_join.js,miss,
+relwarc,sinks,import(url) dynamic module,cases/sink_dynamic_import.js,miss,
+relwarc,obfuscation,"string rewrite (.replace lit,lit)",cases/obf_replace.js,exact,https://api.example.com/api/v2/users
+relwarc,sinks,element.src resource load,cases/sink_element_src.js,miss,
+relwarc,dispatch,"request-config object ({method,url})",cases/rest_config_object.js,miss,
+relwarc,obfuscation,base64 (atob),cases/obf_atob.js,miss,
+relwarc,obfuscation,templated .replace (SDK param),cases/obf_replace_templated.js,miss,https://api.example.com/1/indexes/UNKNOWN/objects
+relwarc,sinks,new WebSocket(url),cases/sink_websocket.js,miss,
+relwarc,sinks,location.href navigation,cases/sink_location.js,exact,https://api.example.com/account/logout
+relwarc,dispatch,tagged-template parameterized route,cases/rest_tagged_template.js,miss,
+relwarc,sinks,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",cases/sink_window_open.js,exact,https://api.example.com/oauth/authorize
+relwarc,cases,encodeURIComponent (query),cases/encode_uri_component.js,exact,https://api.example.com/search?q=UNKNOWN
+relwarc,sinks,"XMLHttpRequest.open(method,url)",cases/sink_xhr_open.js,miss,
+relwarc,cases,collection widening (list index),cases/collection_list_widen.js,miss,
+relwarc,sinks,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",cases/sink_importscripts.js,miss,
+relwarc,cases,collection build (Object.assign map merge),cases/collection_build_merge.js,miss,https://api.example.comunknown/
+relwarc,cases,collection widening (map key),cases/collection_map_widen.js,miss,https://api.example.comunknown/
+relwarc,dispatch,enum method + variable path (openapi-gen),cases/rest_enum_var_path.js,miss,
+relwarc,cases,collection build (imperative map),cases/collection_build_imperative.js,miss,https://api.example.comunknown/
+relwarc,obfuscation,custom decoder (interprocedural),cases/obf_custom_decoder.js,miss,
+relwarc,cases,iteration forward (forEach -> wrapper),cases/iter_forward_wrapper.js,miss,
+relwarc,relwarc,$.ajax data object folded to query string,relwarc-cases/04_ajax_data_object.js,exact,http://example.com/application/aet0Mu/interface/MooS8u/handle?veiw4I=1
+relwarc,cases,promise .then callback return,cases/promise_then.js,miss,
+relwarc,relwarc,deep interprocedural taint with shadowing,relwarc-cases/08_deep_interprocedural.js,exact,http://example.com/application/p0065n/interface/zbtghr/handle?hg3f2d=4&id=12
+relwarc,cases,"new URL(relative, base)",cases/new_url.js,miss,
+relwarc,sinks,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),cases/sink_location_assign.js,miss,
+relwarc,relwarc,$.post URL from base-var + literal concat,relwarc-cases/05_post_concat_url.js,exact,http://example.com/application/iuT6ei/interface/Eek0Mu/handle
+relwarc,relwarc,$.ajax URL-from-var + data-string query,relwarc-cases/06_ajax_url_var_data_string.js,exact,http://example.com/application/gf32d2/interface/vcj442/handle?lkvo24=1
+relwarc,relwarc,$.get params object built by property assignment,relwarc-cases/12_get_object_params.js,exact,http://example.com/application/nh3k21/interface/hd73h4/handle?country=country&lang=language&phgoo9=1
+relwarc,relwarc,"$.ajax POST with FormData body, literal URL",relwarc-cases/15_formdata_post.js,exact,http://example.com/application/j4b2yh/interface/9fdh32/handle
+relwarc,sinks,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",cases/sink_history_pushstate.js,miss,
+relwarc,relwarc,interprocedural + path-sensitive call graph,relwarc-cases/09_interproc_path_sensitive.js,exact,http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=asdfds | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=random | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=UNKNOWNkek | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=UNKNOWN1o | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=po89uo | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=kjkdkkek | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=gn2n11o | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=UNKNOWNo | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=UNKNOWN
+LyN-X,cases,compound-assignment (+=),cases/plus_equals.js,exact,https://api.example.com/v1/users
+LyN-X,cases,single-expression concat,cases/single_expr_concat.js,exact,https://api.example.com/v1/users
+LyN-X,cases,IIFE / closure variants,cases/iife_scenarios.js,exact,https://iife1.example.com/a.js | https://iife2.example.com/api | https://iife3.example.com/users | https://iife4.example.com/default | https://iife5.example.com/search? | https://iife6.example.com/member-alias
+LyN-X,cases,loop (for-of) — construct endpoint per element,cases/loop_forof_construct.js,exact,https://api.example.com/v1/orders | https://api.example.com/v1/products | https://api.example.com/v1/users
+LyN-X,cases,template (runtime-unknown),cases/template_unresolved.js,templated,https://api.example.com/v1/{VAR:kind}
+LyN-X,cases,object config (URL from property),cases/object_config.js,exact,https://api.example.com/v1/users
+LyN-X,cases,literal,cases/literal.js,exact,https://api.example.com/v1/users
+LyN-X,cases,computed member sink (window[m]),cases/computed_member_sink.js,exact,http://malicious.com
+LyN-X,obfuscation,base64 (atob),cases/obf_atob.js,exact,https://api.example.com/v1/users
+LyN-X,cases,loop-built path + URLSearchParams,cases/loop_urlsearchparams.js,exact,https://api.store.com/v3/inventory/electronics/laptops?brand=apple&min_ram=16gb&in_stock=true&sort=price_asc
+LyN-X,obfuscation,combined (atob + join + concat),cases/obf_combined.js,exact,https://api.example.com/v1/users
+LyN-X,cases,conditional (path-sensitive cartesian),cases/conditional_path.js,exact,https://api.store.com/staging/management/inventory/electronics | https://api.store.com/staging/public/catalog/electronics | https://api.store.com/v3/management/inventory/electronics | https://api.store.com/v3/public/catalog/electronics
+LyN-X,dispatch,"REST dispatch (client.post(""/path""))",cases/rest_verb_method.js,exact,https://api.example.com/v1/users
+LyN-X,dispatch,enum method + variable path (openapi-gen),cases/rest_enum_var_path.js,exact,https://api.example.com/v1/users
+LyN-X,cases,loop (Array.forEach) — construct endpoint per element,cases/loop_foreach_construct.js,exact,https://api.example.com/v1/status | https://api.example.com/v2/status
+LyN-X,cases,loop (forEach) — script.src resource per element,cases/loop_map_resource.js,exact,https://cdn.example.com/dist/main.min.js | https://cdn.example.com/dist/vendor.min.js
+LyN-X,dispatch,"request-config object ({method,url})",cases/rest_config_object.js,exact,https://api.example.com/v1/users
+LyN-X,cases,conditional (path-sensitive protocol),cases/conditional_protocol.js,exact,http://jsonplaceholder.typicode.com/users/1 | https://jsonplaceholder.typicode.com/users/1
+LyN-X,obfuscation,custom decoder (interprocedural),cases/obf_custom_decoder.js,exact,https://api.example.com/v1/users
+LyN-X,dispatch,"positional (method, path) builder",cases/rest_positional_pair.js,exact,https://api.example.com/v1/users
+LyN-X,obfuscation,char codes (String.fromCharCode),cases/obf_fromcharcode.js,exact,https://api.example.com/v1/users
+LyN-X,obfuscation,reversed string (split/reverse/join),cases/obf_split_reverse.js,exact,https://api.example.com/v1/users
+LyN-X,dispatch,tagged-template parameterized route,cases/rest_tagged_template.js,templated,https://api.example.com/v1/users/{VAR:userId}/orders
+LyN-X,obfuscation,templated .replace (SDK param),cases/obf_replace_templated.js,templated,https://api.example.com/1/indexes/{VAR:indexName}/objects
+LyN-X,obfuscation,array reassembly (.join),cases/obf_array_join.js,exact,https://api.example.com/v1/users
+LyN-X,sinks,location.href navigation,cases/sink_location.js,exact,https://api.example.com/account/logout
+LyN-X,sinks,new WebSocket(url),cases/sink_websocket.js,exact,wss://api.example.com/stream
+LyN-X,sinks,"XMLHttpRequest.open(method,url)",cases/sink_xhr_open.js,exact,https://api.example.com/v1/users
+LyN-X,dispatch,"combined ""VERB /path"" route string",cases/rest_verb_string.js,exact,https://api.example.com/v1/users
+LyN-X,obfuscation,case transform (toLowerCase),cases/obf_string_transform.js,exact,https://api.example.com/v1/users
+LyN-X,sinks,element.src resource load,cases/sink_element_src.js,exact,https://api.example.com/assets/loader.js
+LyN-X,sinks,import(url) dynamic module,cases/sink_dynamic_import.js,exact,https://api.example.com/modules/dashboard.js
+LyN-X,sinks,"window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",cases/sink_window_open.js,exact,https://api.example.com/oauth/authorize
+LyN-X,cases,encodeURIComponent (query),cases/encode_uri_component.js,exact,https://api.example.com/search?q={VAR:term}
+LyN-X,sinks,navigator.sendBeacon(url),cases/sink_sendbeacon.js,exact,https://api.example.com/collect/metrics
+LyN-X,obfuscation,"string rewrite (.replace lit,lit)",cases/obf_replace.js,exact,https://api.example.com/api/v2/users
+LyN-X,cases,collection widening (map key),cases/collection_map_widen.js,exact,https://api.example.com/v1/items | https://api.example.com/v1/items/detail | https://api.example.com/v1/search
+LyN-X,relwarc,$.ajax URL-from-var + data-string query,relwarc-cases/06_ajax_url_var_data_string.js,exact,http://example.com/application/gf32d2/interface/vcj442/handle
+LyN-X,sinks,"history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",cases/sink_history_pushstate.js,exact,https://api.example.com/app/dashboard
+LyN-X,obfuscation,the URL is carved out of a padded decoy string with a numeric-argument substring() fold,cases/obf_substring.js,exact,https://api.example.com/v1/users
+LyN-X,cases,collection build (imperative map),cases/collection_build_imperative.js,exact,https://api.example.com/v1/items | https://api.example.com/v1/items/detail | https://api.example.com/v1/search
+LyN-X,cases,"new URL(relative, base)",cases/new_url.js,exact,https://api.example.com/v1/users
+LyN-X,sinks,"importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",cases/sink_importscripts.js,exact,https://api.example.com/workers/analytics.js
+LyN-X,sinks,location.assign(url) redirects in call form (distinct code path from the location.href assignment sink),cases/sink_location_assign.js,exact,https://api.example.com/account/login
+LyN-X,cases,collection widening (list index),cases/collection_list_widen.js,exact,https://cdn.example.com/assets/main.9Us7.js | https://cdn.example.com/assets/runtime.CvJI.js | https://cdn.example.com/assets/vendor.B0Y0.js
+LyN-X,relwarc,$.get params object built by property assignment,relwarc-cases/12_get_object_params.js,exact,http://example.com/application/nh3k21/interface/hd73h4/handle
+LyN-X,relwarc,$.post URL from base-var + literal concat,relwarc-cases/05_post_concat_url.js,exact,http://example.com/application/iuT6ei/interface/Eek0Mu/handle
+LyN-X,relwarc,deep interprocedural taint with shadowing,relwarc-cases/08_deep_interprocedural.js,exact,http://example.com/{VAR:c}1 | http://example.com/application/p0065n/interface/zbtghr/handle?hg3f2d=4&id=12 | http://example.com/1
+LyN-X,cases,collection build (Object.assign map merge),cases/collection_build_merge.js,exact,https://api.example.com/v1/items | https://api.example.com/v1/items/detail | https://api.example.com/v1/search
+LyN-X,cases,iteration forward (forEach -> wrapper),cases/iter_forward_wrapper.js,exact,https://cdn.example.com{VAR:u} | https://cdn.example.com/a/main.js | https://cdn.example.com/a/runtime.js | https://cdn.example.com/a/vendor.js
+LyN-X,relwarc,interprocedural + path-sensitive call graph,relwarc-cases/09_interproc_path_sensitive.js,exact,http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller={VAR:checkParam} | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller={VAR:param} | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller={VAR:param}1o | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller={VAR:param}kek | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller={VAR:param}o | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=asdfds | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=gn2n11o | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=kjkdkkek | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=po89uo | http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=random
+LyN-X,relwarc,$.ajax data object folded to query string,relwarc-cases/04_ajax_data_object.js,exact,http://example.com/application/aet0Mu/interface/MooS8u/handle
+LyN-X,relwarc,"$.ajax POST with FormData body, literal URL",relwarc-cases/15_formdata_post.js,exact,http://example.com/application/j4b2yh/interface/9fdh32/handle
+LyN-X,cases,promise .then callback return,cases/promise_then.js,exact,https://api.example.com/v1/users

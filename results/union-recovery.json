@@ -1,0 +1,31 @@
+{
+  "union": 206654,
+  "domains": 60071,
+  "tier": "medium (exact|templated)",
+  "rows": [
+    {
+      "tool": "JSluice",
+      "total": 144173,
+      "unique": 2457,
+      "shared": 141716
+    },
+    {
+      "tool": "LinkFinder",
+      "total": 141800,
+      "unique": 3452,
+      "shared": 138348
+    },
+    {
+      "tool": "LyN-X",
+      "total": 109107,
+      "unique": 45502,
+      "shared": 63605
+    },
+    {
+      "tool": "relwarc",
+      "total": 26233,
+      "unique": 7177,
+      "shared": 19056
+    }
+  ]
+}

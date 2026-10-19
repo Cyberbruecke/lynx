@@ -1,0 +1,78 @@
+query_shape.js re-run over the full 100K-domain corpus, 2026-09-07, adding the >=2-key
+aggregate that Table 4 (which buckets 1 | 2 | 3+) does not report.
+
+Reproduction: crawler/out/js/ is archived as js.tar.zst, so query_shape.js's onDisk()
+check fails for every sha and the script returns all zeros. This run used a wrapper
+(below) substituting an equivalent corpus-presence test -- out/tools/lynx/<sha>.json,
+which holds exactly 132,646 entries, matching the paper's script count.
+query_shape.js itself was NOT modified. Output reproduces Table 4 exactly.
+
+>=2 KEYS AGGREGATE (retention = full-shape / path-recovered):
+  query-bearing GT 314,710 -- 1 key 126,542 | 2 keys 43,495 | 3+ keys 144,673
+  >=2 keys = 188,168 (59.8% of query-bearing)
+
+  tool         pathRec>=2   full>=2   retention   abs. recall
+  LinkFinder       31,427        10       0.03%         0.01%
+  JSluice          31,103     4,176      13.43%         2.22%
+  Relwarc           8,285     1,835      22.15%         0.98%
+  LyN-X            14,881     4,740      31.85%         2.52%
+
+  LyN-X / LinkFinder at >=2 keys: 1,001x
+
+--- raw query_shape.js output ---
+query-bearing GT endpoints: 314,710  (1 key: 126,542, 2 keys: 43,495, 3+ keys: 144,673)
+
+FULL-SHAPE recovery = host+path match AND every observed query key reconstructed.
+(pathRec = recovered at host+path; full = full-shape; conditional = full/pathRec)
+
+linkfinder:
+   1-key: path-recovered  17060  full-shape   8545  (50.1% of path-recovered)
+   2-key: path-recovered   6328  full-shape     10  (0.2% of path-recovered)
+   3+-key: path-recovered  25099  full-shape      0  (0.0% of path-recovered)
+   TOTAL: path 48487  full-shape 8555  -> 17.6% of path-recovered keep full shape
+
+jsluice:
+   1-key: path-recovered  18002  full-shape   8442  (46.9% of path-recovered)
+   2-key: path-recovered   6110  full-shape   2384  (39.0% of path-recovered)
+   3+-key: path-recovered  24993  full-shape   1792  (7.2% of path-recovered)
+   TOTAL: path 49105  full-shape 12618  -> 25.7% of path-recovered keep full shape
+
+relwarc:
+   1-key: path-recovered   3037  full-shape   2348  (77.3% of path-recovered)
+   2-key: path-recovered    899  full-shape    606  (67.4% of path-recovered)
+   3+-key: path-recovered   7386  full-shape   1229  (16.6% of path-recovered)
+   TOTAL: path 11322  full-shape 4183  -> 36.9% of path-recovered keep full shape
+
+lynx:
+   1-key: path-recovered  16122  full-shape  11809  (73.2% of path-recovered)
+   2-key: path-recovered   3444  full-shape   2506  (72.8% of path-recovered)
+   3+-key: path-recovered  11437  full-shape   2234  (19.5% of path-recovered)
+   TOTAL: path 31003  full-shape 16549  -> 53.4% of path-recovered keep full shape
+
+--- wrapper used (scratchpad/qs_wrap.js) ---
+// Wrapper: crawler/out/js/ is archived as js.tar.zst, so query_shape.js's onDisk()
+// check fails for every sha. Substitute an equivalent "script is in the corpus" test:
+// presence of out/tools/lynx/<sha>.json (132,646 entries == the paper's script count).
+const fs = require("fs"), path = require("path");
+const TOOLS_LYNX = "/workspace/crawler/out/tools/lynx";
+const real = fs.existsSync.bind(fs);
+const JSDIR = "/workspace/crawler/out/js/";
+fs.existsSync = (p) => {
+  const s = String(p);
+  if (s.startsWith(JSDIR) && s.endsWith(".js"))
+    return real(path.join(TOOLS_LYNX, path.basename(s, ".js") + ".json"));
+  return real(p);
+};
+process.argv[2] = process.env.NDOM || "100000";
+require("/workspace/crawler/query_shape.js");
+
+=== query_keys.js (mean per-key coverage, non-conjunctive complement) ===
+GT endpoints fired WITH >=1 query param: 314,710 over 47977 domains
+
+tool        recovered  anyKey%  meanKeyCov    keysHit/keysTot
+linkfinder      48487    58.8%       26.9%       28230/262396
+jsluice         49105    58.7%       31.6%       38114/261946
+relwarc         11322    91.1%       43.6%       17122/113424
+lynx            31003    71.6%       56.5%       30976/148653
+
+meanKeyCov = mean over recovered query-bearing endpoints of (observed keys reconstructed / observed keys).

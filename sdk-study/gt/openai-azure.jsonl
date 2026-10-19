@@ -1,0 +1,6 @@
+{"method":"POST","path":"/deployments/{deployment-id}/completions","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/completions","sdk":"openai-azure","style":"generated (autorest)"}
+{"method":"POST","path":"/deployments/{deployment-id}/embeddings","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/embeddings","sdk":"openai-azure","style":"generated (autorest)"}
+{"method":"POST","path":"/deployments/{deployment-id}/chat/completions","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/chat/completions","sdk":"openai-azure","style":"generated (autorest)"}
+{"method":"POST","path":"/deployments/{deployment-id}/audio/transcriptions","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/audio/transcriptions","sdk":"openai-azure","style":"generated (autorest)"}
+{"method":"POST","path":"/deployments/{deployment-id}/audio/translations","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/audio/translations","sdk":"openai-azure","style":"generated (autorest)"}
+{"method":"POST","path":"/deployments/{deployment-id}/images/generations","url":"https://your-resource-name.openai.azure.com/openai/deployments/{deployment-id}/images/generations","sdk":"openai-azure","style":"generated (autorest)"}

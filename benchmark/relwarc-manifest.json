@@ -1,0 +1,72 @@
+[
+  {
+    "file": "relwarc-cases/04_ajax_data_object.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "$.ajax data object folded to query string",
+    "expected": [
+      "http://example.com/application/aet0Mu/interface/MooS8u/handle?veiw4I=1"
+    ],
+    "short": "$.ajax data fold"
+  },
+  {
+    "file": "relwarc-cases/05_post_concat_url.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "$.post URL from base-var + literal concat",
+    "expected": [
+      "http://example.com/application/iuT6ei/interface/Eek0Mu/handle"
+    ],
+    "short": "$.post concat"
+  },
+  {
+    "file": "relwarc-cases/06_ajax_url_var_data_string.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "$.ajax URL-from-var + data-string query",
+    "expected": [
+      "http://example.com/application/gf32d2/interface/vcj442/handle?lkvo24=1"
+    ],
+    "short": "$.ajax + query"
+  },
+  {
+    "file": "relwarc-cases/08_deep_interprocedural.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "deep interprocedural taint with shadowing",
+    "expected": [
+      "http://example.com/application/p0065n/interface/zbtghr/handle?hg3f2d=4&id=12"
+    ],
+    "short": "Deep taint"
+  },
+  {
+    "file": "relwarc-cases/09_interproc_path_sensitive.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "interprocedural + path-sensitive call graph",
+    "expected": [
+      "http://example.com/application/kl3j5h/interface/32nhj4/handle?qh44j3=1&surveiller=po89uo"
+    ],
+    "short": "Interproc graph"
+  },
+  {
+    "file": "relwarc-cases/12_get_object_params.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "$.get params object built by property assignment",
+    "expected": [
+      "http://example.com/application/nh3k21/interface/hd73h4/handle?country=country&lang=language&phgoo9=1"
+    ],
+    "short": "$.get params obj"
+  },
+  {
+    "file": "relwarc-cases/15_formdata_post.js",
+    "suite": "relwarc",
+    "base": "http://example.com/",
+    "category": "$.ajax POST with FormData body, literal URL",
+    "expected": [
+      "http://example.com/application/j4b2yh/interface/9fdh32/handle"
+    ],
+    "short": "$.ajax FormData"
+  }
+]

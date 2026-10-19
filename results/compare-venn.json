@@ -1,0 +1,68 @@
+{
+  "sets": [
+    "LinkFinder",
+    "JSluice",
+    "LyN-X"
+  ],
+  "threshold": "exact|templated (path-level structural recovery)",
+  "total_gt": 861385,
+  "gt_first_party": 324465,
+  "gt_third_party": 536920,
+  "venn3_pathlevel": {
+    "order": [
+      "LFonly",
+      "JSonly",
+      "LF&JS",
+      "LXonly",
+      "LF&LX",
+      "JS&LX",
+      "all3"
+    ],
+    "subsets": [
+      3479,
+      2548,
+      84343,
+      51570,
+      255,
+      3559,
+      53723
+    ]
+  },
+  "venn3_weakinclusive": {
+    "order": [
+      "LFonly",
+      "JSonly",
+      "LF&JS",
+      "LXonly",
+      "LF&LX",
+      "JS&LX",
+      "all3"
+    ],
+    "subsets": [
+      3785,
+      8228,
+      178923,
+      38205,
+      671,
+      4978,
+      79194
+    ]
+  },
+  "lynx_only": {
+    "n": 51570,
+    "templated": 32507,
+    "exact": 19063,
+    "first_party": 25584,
+    "third_party": 25986
+  },
+  "regex_only": {
+    "n": 90370,
+    "first_party": 27624,
+    "third_party": 62746
+  },
+  "all3": {
+    "n": 53723,
+    "first_party": 8497,
+    "third_party": 45226
+  }
+}

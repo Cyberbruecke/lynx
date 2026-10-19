@@ -1,0 +1,14 @@
+[
+ {
+  "sha": "79bc9c62ee4ec40a87b046d042b35b85ce866573",
+  "ranCaps": 14,
+  "baseCount": 16,
+  "err": "concat:Maximum call stack size exceeded"
+ },
+ {
+  "sha": "ca9377f759cffa64b1a345c8bb261b48cf96494d",
+  "ranCaps": 6,
+  "baseCount": 0,
+  "err": ":Unexpected token (2:2)"
+ }
+]

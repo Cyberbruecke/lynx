@@ -1,0 +1,9 @@
+group,tool,recall,precision,recovered,total,emitted
+code,linkfinder,0.4019,0.1139,5354,13321,33349
+code,jsluice,0.1978,0.0914,2635,13321,19818
+code,relwarc,0.0000,0.0000,0,13321,36
+code,lynx,0.5552,0.9311,7396,13321,5123
+data,linkfinder,0.0778,0.0029,101,1298,22659
+data,jsluice,0.0247,0.0090,32,1298,2227
+data,relwarc,0.0000,0.0000,0,1298,0
+data,lynx,0.0000,0.0000,0,1298,2

@@ -1,0 +1,21 @@
+{
+  "name": "lynx-crawler",
+  "version": "1.0.0",
+  "description": "Dynamic ground-truth crawler for LyN-X: CDP initiator-chain capture + JS asset download.",
+  "type": "commonjs",
+  "bin": {
+    "lynx-crawl": "crawl.js",
+    "lynx-download": "download.js"
+  },
+  "scripts": {
+    "crawl": "node crawl.js",
+    "download": "node download.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "js-beautify": "^2.0.3",
+    "puppeteer": "^24.0.0"
+  }
+}

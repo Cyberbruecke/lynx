@@ -1,0 +1,467 @@
+[
+  {
+    "file": "cases/literal.js",
+    "suite": "cases",
+    "category": "literal",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Literal"
+  },
+  {
+    "file": "cases/plus_equals.js",
+    "suite": "cases",
+    "category": "compound-assignment (+=)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Compound (+=)"
+  },
+  {
+    "file": "cases/single_expr_concat.js",
+    "suite": "cases",
+    "category": "single-expression concat",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Concat"
+  },
+  {
+    "file": "cases/template_unresolved.js",
+    "suite": "cases",
+    "category": "template (runtime-unknown)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Template"
+  },
+  {
+    "file": "cases/object_config.js",
+    "suite": "cases",
+    "category": "object config (URL from property)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Object config"
+  },
+  {
+    "file": "cases/computed_member_sink.js",
+    "suite": "cases",
+    "category": "computed member sink (window[m])",
+    "expected": [
+      "http://malicious.com"
+    ],
+    "short": "Computed member"
+  },
+  {
+    "file": "cases/iife_scenarios.js",
+    "suite": "cases",
+    "category": "IIFE / closure variants",
+    "expected": [
+      "https://iife1.example.com/a.js",
+      "https://iife2.example.com/api",
+      "https://iife3.example.com/users",
+      "https://iife4.example.com/default",
+      "https://iife5.example.com/search?",
+      "https://iife6.example.com/member-alias"
+    ],
+    "short": "IIFE / closure"
+  },
+  {
+    "file": "cases/loop_urlsearchparams.js",
+    "suite": "cases",
+    "category": "loop-built path + URLSearchParams",
+    "expected": [
+      "https://api.store.com/v3/inventory/electronics/laptops?brand=apple&min_ram=16gb&in_stock=true&sort=price_asc"
+    ],
+    "short": "Loop + params"
+  },
+  {
+    "file": "cases/loop_forof_construct.js",
+    "suite": "cases",
+    "category": "loop (for-of) — construct endpoint per element",
+    "expected": [
+      "https://api.example.com/v1/users",
+      "https://api.example.com/v1/orders",
+      "https://api.example.com/v1/products"
+    ],
+    "short": "for-of loop"
+  },
+  {
+    "file": "cases/loop_foreach_construct.js",
+    "suite": "cases",
+    "category": "loop (Array.forEach) — construct endpoint per element",
+    "expected": [
+      "https://api.example.com/v1/status",
+      "https://api.example.com/v2/status"
+    ],
+    "short": "forEach loop"
+  },
+  {
+    "file": "cases/loop_map_resource.js",
+    "suite": "cases",
+    "category": "loop (forEach) — script.src resource per element",
+    "expected": [
+      "https://cdn.example.com/dist/main.min.js",
+      "https://cdn.example.com/dist/vendor.min.js"
+    ],
+    "short": "forEach (src)"
+  },
+  {
+    "file": "cases/conditional_protocol.js",
+    "suite": "cases",
+    "category": "conditional (path-sensitive protocol)",
+    "expected": [
+      "http://jsonplaceholder.typicode.com/users/1",
+      "https://jsonplaceholder.typicode.com/users/1"
+    ],
+    "short": "Conditional (proto)"
+  },
+  {
+    "file": "cases/conditional_path.js",
+    "suite": "cases",
+    "category": "conditional (path-sensitive cartesian)",
+    "expected": [
+      "https://api.store.com/staging/management/inventory/electronics",
+      "https://api.store.com/staging/public/catalog/electronics",
+      "https://api.store.com/v3/management/inventory/electronics",
+      "https://api.store.com/v3/public/catalog/electronics"
+    ],
+    "short": "Conditional (path)"
+  },
+  {
+    "file": "cases/obf_atob.js",
+    "suite": "obfuscation",
+    "category": "base64 (atob)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "base64 (atob)"
+  },
+  {
+    "file": "cases/obf_fromcharcode.js",
+    "suite": "obfuscation",
+    "category": "char codes (String.fromCharCode)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "fromCharCode"
+  },
+  {
+    "file": "cases/obf_array_join.js",
+    "suite": "obfuscation",
+    "category": "array reassembly (.join)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Array join"
+  },
+  {
+    "file": "cases/obf_split_reverse.js",
+    "suite": "obfuscation",
+    "category": "reversed string (split/reverse/join)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Reversed string"
+  },
+  {
+    "file": "cases/obf_custom_decoder.js",
+    "suite": "obfuscation",
+    "category": "custom decoder (interprocedural)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Custom decoder"
+  },
+  {
+    "file": "cases/obf_string_transform.js",
+    "suite": "obfuscation",
+    "category": "case transform (toLowerCase)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Case transform"
+  },
+  {
+    "file": "cases/obf_combined.js",
+    "suite": "obfuscation",
+    "category": "combined (atob + join + concat)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Combined decode"
+  },
+  {
+    "file": "cases/obf_substring.js",
+    "suite": "obfuscation",
+    "category": "the URL is carved out of a padded decoy string with a numeric-argument substring() fold",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "substring fold"
+  },
+  {
+    "file": "cases/rest_verb_method.js",
+    "suite": "dispatch",
+    "category": "REST dispatch (client.post(\"/path\"))",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "REST dispatch"
+  },
+  {
+    "file": "cases/rest_positional_pair.js",
+    "suite": "dispatch",
+    "category": "positional (method, path) builder",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Positional builder"
+  },
+  {
+    "file": "cases/rest_enum_var_path.js",
+    "suite": "dispatch",
+    "category": "enum method + variable path (openapi-gen)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Enum + var path"
+  },
+  {
+    "file": "cases/rest_config_object.js",
+    "suite": "dispatch",
+    "category": "request-config object ({method,url})",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Config object"
+  },
+  {
+    "file": "cases/rest_verb_string.js",
+    "suite": "dispatch",
+    "category": "combined \"VERB /path\" route string",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "VERB+path string"
+  },
+  {
+    "file": "cases/rest_tagged_template.js",
+    "suite": "dispatch",
+    "category": "tagged-template parameterized route",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users/123/orders"
+    ],
+    "short": "Tagged template"
+  },
+  {
+    "file": "cases/obf_replace.js",
+    "suite": "obfuscation",
+    "category": "string rewrite (.replace lit,lit)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/api/v2/users"
+    ],
+    "short": ".replace rewrite"
+  },
+  {
+    "file": "cases/obf_replace_templated.js",
+    "suite": "obfuscation",
+    "category": "templated .replace (SDK param)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/1/indexes/myindex/objects"
+    ],
+    "short": "Templated .replace"
+  },
+  {
+    "file": "cases/encode_uri_component.js",
+    "suite": "cases",
+    "category": "encodeURIComponent (query)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/search?q={}"
+    ],
+    "short": "encodeURIComponent"
+  },
+  {
+    "file": "cases/sink_xhr_open.js",
+    "suite": "sinks",
+    "category": "XMLHttpRequest.open(method,url)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "XHR.open"
+  },
+  {
+    "file": "cases/sink_websocket.js",
+    "suite": "sinks",
+    "category": "new WebSocket(url)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "wss://api.example.com/stream"
+    ],
+    "short": "WebSocket"
+  },
+  {
+    "file": "cases/sink_location.js",
+    "suite": "sinks",
+    "category": "location.href navigation",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/account/logout"
+    ],
+    "short": "location.href"
+  },
+  {
+    "file": "cases/sink_sendbeacon.js",
+    "suite": "sinks",
+    "category": "navigator.sendBeacon(url)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/collect/metrics"
+    ],
+    "short": "sendBeacon"
+  },
+  {
+    "file": "cases/sink_element_src.js",
+    "suite": "sinks",
+    "category": "element.src resource load",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/assets/loader.js"
+    ],
+    "short": "element.src"
+  },
+  {
+    "file": "cases/sink_dynamic_import.js",
+    "suite": "sinks",
+    "category": "import(url) dynamic module",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/modules/dashboard.js"
+    ],
+    "short": "import()"
+  },
+  {
+    "file": "cases/sink_window_open.js",
+    "suite": "sinks",
+    "category": "window.open(url) opens the URL in a new tab/popup (navigation sink, URL at arg 0)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/oauth/authorize"
+    ],
+    "short": "window.open"
+  },
+  {
+    "file": "cases/sink_location_assign.js",
+    "suite": "sinks",
+    "category": "location.assign(url) redirects in call form (distinct code path from the location.href assignment sink)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/account/login"
+    ],
+    "short": "location.assign"
+  },
+  {
+    "file": "cases/sink_history_pushstate.js",
+    "suite": "sinks",
+    "category": "history.pushState(state, title, url) navigates an SPA with the URL at the 3rd positional arg",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/app/dashboard"
+    ],
+    "short": "pushState"
+  },
+  {
+    "file": "cases/sink_importscripts.js",
+    "suite": "sinks",
+    "category": "importScripts(url) loads a script into a worker context (identifier-call sink, URL at arg 0)",
+    "base": "https://api.example.com/",
+    "expected": [
+      "https://api.example.com/workers/analytics.js"
+    ],
+    "short": "importScripts"
+  },
+  {
+    "file": "cases/collection_list_widen.js",
+    "suite": "cases",
+    "category": "collection widening (list index)",
+    "expected": [
+      "https://cdn.example.com/assets/main.9Us7.js",
+      "https://cdn.example.com/assets/vendor.B0Y0.js",
+      "https://cdn.example.com/assets/runtime.CvJI.js"
+    ],
+    "short": "Widen (list)"
+  },
+  {
+    "file": "cases/collection_map_widen.js",
+    "suite": "cases",
+    "category": "collection widening (map key)",
+    "expected": [
+      "https://api.example.com/v1/items",
+      "https://api.example.com/v1/items/detail",
+      "https://api.example.com/v1/search"
+    ],
+    "short": "Widen (map)"
+  },
+  {
+    "file": "cases/collection_build_merge.js",
+    "suite": "cases",
+    "category": "collection build (Object.assign map merge)",
+    "expected": [
+      "https://api.example.com/v1/items",
+      "https://api.example.com/v1/items/detail",
+      "https://api.example.com/v1/search"
+    ],
+    "short": "Map merge"
+  },
+  {
+    "file": "cases/collection_build_imperative.js",
+    "suite": "cases",
+    "category": "collection build (imperative map)",
+    "expected": [
+      "https://api.example.com/v1/items",
+      "https://api.example.com/v1/items/detail",
+      "https://api.example.com/v1/search"
+    ],
+    "short": "Map build"
+  },
+  {
+    "file": "cases/iter_forward_wrapper.js",
+    "suite": "cases",
+    "category": "iteration forward (forEach -> wrapper)",
+    "expected": [
+      "https://cdn.example.com/a/main.js",
+      "https://cdn.example.com/a/vendor.js",
+      "https://cdn.example.com/a/runtime.js"
+    ],
+    "short": "forEach->fn"
+  },
+  {
+    "file": "cases/new_url.js",
+    "suite": "cases",
+    "category": "new URL(relative, base)",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "new URL()"
+  },
+  {
+    "file": "cases/promise_then.js",
+    "suite": "cases",
+    "category": "promise .then callback return",
+    "expected": [
+      "https://api.example.com/v1/users"
+    ],
+    "short": "Promise .then"
+  }
+]

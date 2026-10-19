@@ -1,0 +1,152 @@
+{
+  "corpus": "sdk",
+  "targets_total": 2916,
+  "targets_reproduced": 2916,
+  "non_reproducible": 0,
+  "constructed_arity_ge2": 2916,
+  "literal_arity1": 0,
+  "capabilities": [
+    {
+      "capability": "template",
+      "required": 2916,
+      "pct_required": 100,
+      "sole": 2916,
+      "pct_sole": 100
+    },
+    {
+      "capability": "concat",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "member",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "interproc",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "iteration",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "array_join",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "atob",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "fromCharCode",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "str_transform",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "str_replace",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "new_url",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "query_params",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    },
+    {
+      "capability": "promise",
+      "required": 0,
+      "pct_required": 0,
+      "sole": 0,
+      "pct_sole": 0
+    }
+  ],
+  "need_count_hist": {
+    "1": 2916
+  },
+  "no_single_capability": 0,
+  "no_single_literal": 0,
+  "no_single_combination": 0,
+  "top_pairs": [],
+  "by_sink": [
+    {
+      "sink": "rest.post",
+      "total": 943,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    },
+    {
+      "sink": "rest.get",
+      "total": 661,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    },
+    {
+      "sink": "rest.put",
+      "total": 590,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    },
+    {
+      "sink": "rest.method",
+      "total": 316,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    },
+    {
+      "sink": "rest.delete",
+      "total": 293,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    },
+    {
+      "sink": "rest.patch",
+      "total": 113,
+      "top_caps": [
+        "template:100.0%"
+      ]
+    }
+  ]
+}

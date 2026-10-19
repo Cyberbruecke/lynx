@@ -1,0 +1,14 @@
+capability,required,pct_required,sole_required,pct_sole
+template,2916,100,2916,100
+concat,0,0,0,0
+member,0,0,0,0
+interproc,0,0,0,0
+iteration,0,0,0,0
+array_join,0,0,0,0
+atob,0,0,0,0
+fromCharCode,0,0,0,0
+str_transform,0,0,0,0
+str_replace,0,0,0,0
+new_url,0,0,0,0
+query_params,0,0,0,0
+promise,0,0,0,0

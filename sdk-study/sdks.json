@@ -1,0 +1,432 @@
+{
+  "_comment": "Curated API-SDK dataset. specSource: single 'github:owner/repo/path' | 'https://...' | a github dir 'github:owner/repo/dir/' (auto-listed) | an ARRAY of those (merged). A '(verify)' suffix or 'N/A' marks a source fetch_sdks.js flags as MANUAL. specFormat: openapi3 | swagger2 | discovery. style drives the reconstruction stratification. wappalyzer: technology name for web-detectable (browser) SDKs -> joined to HTTP-Archive/Wappalyzer web-adoption by enrich_deployment.js; null for server-side SDKs (ranked by npm downloads instead).",
+  "_deployment": "Two signals (enrich_deployment.js -> deployment.json): (1) npm downloads/month for ALL SDKs (api.npmjs.org, free); (2) web adoption for wappalyzer-tagged SDKs from an HTTP-Archive Technology-Report / Wappalyzer CSV (--webcsv). BuiltWith aggregate counts are behind their product; HTTP Archive is the reproducible free equivalent.",
+  "sdks": [
+    {
+      "name": "stripe",
+      "npm": "stripe",
+      "base": "https://api.stripe.com",
+      "specFormat": "openapi3",
+      "specSource": "github:stripe/openapi/openapi/spec3.sdk.json",
+      "style": "resource-class interpolation",
+      "wappalyzer": "Stripe",
+      "group": "code"
+    },
+    {
+      "name": "github-octokit",
+      "npm": "@octokit/rest",
+      "base": "https://api.github.com",
+      "specFormat": "openapi3",
+      "specSource": "github:github/rest-api-description/descriptions/api.github.com/api.github.com.json",
+      "style": "route-string map",
+      "wappalyzer": null,
+      "group": "data"
+    },
+    {
+      "name": "twilio",
+      "npm": "twilio",
+      "base": "https://api.twilio.com",
+      "specFormat": "openapi3",
+      "specSource": "github:twilio/twilio-oai/spec/json/",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "slack-web-api",
+      "npm": "@slack/web-api",
+      "base": "https://slack.com/api",
+      "specFormat": "openapi3",
+      "specSource": "github:slackapi/slack-api-specs/web-api/slack_web_openapi_v2.json",
+      "style": "base + method concat",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "openai",
+      "npm": "openai",
+      "base": "https://api.openai.com",
+      "specFormat": "openapi3",
+      "specSource": "github:openai/openai-openapi/openapi.yaml",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "anthropic",
+      "npm": "@anthropic-ai/sdk",
+      "base": "https://api.anthropic.com",
+      "specFormat": "openapi3",
+      "specSource": "github:anthropics/anthropic-sdk-typescript/.stats.yml (verify: Stainless spec)",
+      "style": "generated (stainless)",
+      "wappalyzer": null,
+      "exclude": "no official public OpenAPI spec (Stainless-internal .stats.yml only)",
+      "group": "code"
+    },
+    {
+      "name": "cohere",
+      "npm": "cohere-ai",
+      "base": "https://api.cohere.com",
+      "specFormat": "openapi3",
+      "specSource": "github:cohere-ai/cohere-developer-experience/cohere-openapi.yaml",
+      "style": "generated (fern)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "plaid",
+      "npm": "plaid",
+      "base": "https://production.plaid.com",
+      "specFormat": "openapi3",
+      "specSource": "github:plaid/plaid-openapi/2020-09-14.yml",
+      "style": "generated (openapi-generator)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "square",
+      "npm": "square",
+      "base": "https://connect.squareup.com",
+      "specFormat": "openapi3",
+      "specSource": "github:square/connect-api-specification/api.json",
+      "style": "generated resource-class",
+      "wappalyzer": "Square",
+      "group": "code"
+    },
+    {
+      "name": "sendgrid",
+      "npm": "@sendgrid/client",
+      "base": "https://api.sendgrid.com",
+      "specFormat": "openapi3",
+      "specSource": "github:twilio/sendgrid-oai/spec/json/",
+      "style": "generic request(method,path)",
+      "wappalyzer": null,
+      "exclude": "generic thin client \u2014 endpoint paths are caller-supplied, 0 in the SDK bundle (extreme spec\u228bSDK); unrecoverable by any static tool",
+      "group": "code"
+    },
+    {
+      "name": "discord",
+      "npm": "@discordjs/rest",
+      "base": "https://discord.com/api",
+      "specFormat": "openapi3",
+      "specSource": "github:discord/discord-api-spec/specs/openapi.json",
+      "style": "route-builder functions",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "algolia",
+      "npm": "algoliasearch",
+      "base": "https://{appId}-dsn.algolia.net",
+      "specFormat": "openapi3",
+      "specSource": "github:algolia/api-clients-automation/specs/bundled/search.yml",
+      "style": "resource-class interpolation",
+      "wappalyzer": "Algolia",
+      "group": "code"
+    },
+    {
+      "name": "cloudflare",
+      "npm": "cloudflare",
+      "base": "https://api.cloudflare.com/client/v4",
+      "specFormat": "openapi3",
+      "specSource": "github:cloudflare/api-schemas/openapi.json",
+      "style": "generated (stainless)",
+      "wappalyzer": "Cloudflare",
+      "group": "code"
+    },
+    {
+      "name": "box",
+      "npm": "box-node-sdk",
+      "base": "https://api.box.com/2.0",
+      "specFormat": "openapi3",
+      "specSource": "github:box/box-openapi/openapi.json",
+      "style": "hand-written managers",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "adyen-checkout",
+      "npm": "@adyen/api-library",
+      "base": "https://checkout-test.adyen.com",
+      "specFormat": "openapi3",
+      "specSource": "github:Adyen/adyen-openapi/json/CheckoutService-v71.json",
+      "style": "generated service-class",
+      "wappalyzer": "Adyen",
+      "group": "code"
+    },
+    {
+      "name": "google-drive",
+      "npm": "googleapis",
+      "base": "https://www.googleapis.com",
+      "specFormat": "discovery",
+      "specSource": "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest",
+      "style": "discovery-generated",
+      "wappalyzer": null,
+      "group": "data"
+    },
+    {
+      "name": "google-calendar",
+      "npm": "googleapis",
+      "base": "https://www.googleapis.com",
+      "specFormat": "discovery",
+      "specSource": "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+      "style": "discovery-generated",
+      "wappalyzer": null,
+      "group": "data"
+    },
+    {
+      "name": "digitalocean",
+      "npm": "dots-wrapper",
+      "base": "https://api.digitalocean.com",
+      "specFormat": "openapi3",
+      "specSource": "github:digitalocean/openapi/specification/DigitalOcean-public.v2.yaml",
+      "style": "hand-written",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "sentry",
+      "npm": "@sentry/node",
+      "base": "https://sentry.io/api/0",
+      "specFormat": "openapi3",
+      "specSource": "github:getsentry/sentry-api-schema/openapi-derefed.json",
+      "style": "hand-written",
+      "wappalyzer": "Sentry",
+      "group": "code"
+    },
+    {
+      "name": "pagerduty",
+      "npm": "@pagerduty/pdjs",
+      "base": "https://api.pagerduty.com",
+      "specFormat": "openapi3",
+      "specSource": "github:PagerDuty/api-schema/reference/REST/openapiv3.json",
+      "style": "generic request",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "asana",
+      "npm": "asana",
+      "base": "https://app.asana.com/api/1.0",
+      "specFormat": "openapi3",
+      "specSource": "github:Asana/openapi/defs/asana_oas.yaml",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "xero",
+      "npm": "xero-node",
+      "base": "https://api.xero.com",
+      "specFormat": "openapi3",
+      "specSource": "github:XeroAPI/Xero-OpenAPI/xero_accounting.yaml",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "intercom",
+      "npm": "intercom-client",
+      "base": "https://api.intercom.io",
+      "specFormat": "openapi3",
+      "specSource": "github:intercom/Intercom-OpenAPI/descriptions/2.15/api.intercom.io.yaml",
+      "style": "generated (fern)",
+      "wappalyzer": "Intercom",
+      "group": "code"
+    },
+    {
+      "name": "hubspot",
+      "npm": "@hubspot/api-client",
+      "base": "https://api.hubapi.com",
+      "specFormat": "openapi3",
+      "specSource": "github:HubSpot/HubSpot-public-api-spec-collection/PublicApiSpecs/ (verify: many)",
+      "style": "generated per-product",
+      "wappalyzer": "HubSpot",
+      "exclude": "per-product specs deeply nested (no single canonical file); needs manual multi-file pick",
+      "group": "code"
+    },
+    {
+      "name": "datadog",
+      "npm": "@datadog/datadog-api-client",
+      "base": "https://api.datadoghq.com",
+      "specFormat": "openapi3",
+      "specSource": "github:DataDog/datadog-api-client-typescript/.generator/schemas/v2/openapi.yaml",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "okta",
+      "npm": "@okta/okta-sdk-nodejs",
+      "base": "https://{yourOktaDomain}",
+      "specFormat": "openapi3",
+      "specSource": "github:okta/okta-management-openapi-spec/dist/current/management-minimal.yaml",
+      "style": "generated resource-class",
+      "wappalyzer": "Okta",
+      "group": "code"
+    },
+    {
+      "name": "docusign",
+      "npm": "docusign-esign",
+      "base": "https://www.docusign.net/restapi",
+      "specFormat": "swagger2",
+      "specSource": "github:docusign/OpenAPI-Specifications/esignature.rest.swagger-v2.1.json",
+      "style": "generated resource-class",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "mailchimp-mkt",
+      "npm": "@mailchimp/mailchimp_marketing",
+      "base": "https://server.api.mailchimp.com/3.0",
+      "specFormat": "swagger2",
+      "specSource": "github:mailchimp/mailchimp-client-lib-codegen/spec/marketing.json",
+      "style": "generated resource-class",
+      "wappalyzer": "Mailchimp",
+      "group": "code"
+    },
+    {
+      "name": "spotify",
+      "npm": "@spotify/web-api-ts-sdk",
+      "base": "https://api.spotify.com",
+      "specFormat": "openapi3",
+      "specSource": "github:sonallux/spotify-web-api/fixed-spotify-open-api.yml (community)",
+      "style": "hand-written",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "twitch",
+      "npm": "@twurple/api",
+      "base": "https://api.twitch.tv/helix",
+      "specFormat": "openapi3",
+      "specSource": "github:DmitryScaletta/twitch-api-swagger/openapi.json (community)",
+      "style": "hand-written",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "vonage",
+      "npm": "@vonage/server-sdk",
+      "base": "https://api.nexmo.com",
+      "specFormat": "openapi3",
+      "specSource": "github:Vonage/vonage-api-specification/definitions/ (verify: many)",
+      "style": "generated per-product",
+      "wappalyzer": null,
+      "exclude": "repo Vonage/vonage-api-specification now 404 (removed/private)",
+      "group": "code"
+    },
+    {
+      "name": "klaviyo",
+      "npm": "klaviyo-api",
+      "base": "https://a.klaviyo.com",
+      "specFormat": "openapi3",
+      "specSource": "github:klaviyo/openapi/openapi/stable.json",
+      "style": "generated resource-class",
+      "wappalyzer": "Klaviyo",
+      "group": "code"
+    },
+    {
+      "name": "mux",
+      "npm": "@mux/mux-node",
+      "base": "https://api.mux.com",
+      "specFormat": "openapi3",
+      "specSource": "https://storage.googleapis.com/stainless-sdk-openapi-specs/mux/mux-d9ec974ac41da39a8bc9920a266615453f948fec82e03a1d9d4ffc0ae5f372c5.yml",
+      "style": "generated (stainless)",
+      "wappalyzer": "Mux",
+      "group": "code"
+    },
+    {
+      "name": "lithic",
+      "npm": "lithic",
+      "base": "https://api.lithic.com",
+      "specFormat": "openapi3",
+      "specSource": "github:lithic-com/lithic-openapi/lithic-openapi.yml",
+      "style": "generated (stainless)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "modern-treasury",
+      "npm": "modern-treasury",
+      "base": "https://app.moderntreasury.com/api",
+      "specFormat": "openapi3",
+      "specSource": "github:Modern-Treasury/modern-treasury-openapi/openapi/mt_openapi_spec_v1.yaml",
+      "style": "generated (stainless)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "orb",
+      "npm": "orb-billing",
+      "base": "https://api.withorb.com/v1",
+      "specFormat": "openapi3",
+      "specSource": "https://storage.googleapis.com/stainless-sdk-openapi-specs/orb%2Forb-17c43dab26af75e1b9f7e61ac8da1219cea65c7d0666d98686b71a60183e458d.yml",
+      "style": "generated (stainless)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "increase",
+      "npm": "increase",
+      "base": "https://api.increase.com",
+      "specFormat": "openapi3",
+      "specSource": "https://storage.googleapis.com/stainless-sdk-openapi-specs/increase/increase-7761a7b3900011b6b82798bdc61499235a02ed9c48fa5f20e2758f4f2e45c72b.yml",
+      "style": "generated (stainless)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "alpaca",
+      "npm": "@alpacahq/alpaca-trade-api",
+      "base": "https://api.alpaca.markets",
+      "specFormat": "openapi3",
+      "specSource": "github:alpacahq/alpaca-docs/oas/trading/openapi.yaml",
+      "style": "hand-written",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "coinbase-advanced",
+      "npm": "coinbase-advanced-node",
+      "base": "https://api.coinbase.com",
+      "specFormat": "openapi3",
+      "specSource": "N/A (verify: Coinbase Advanced Trade OpenAPI)",
+      "style": "hand-written",
+      "wappalyzer": null,
+      "exclude": "no official/public OpenAPI spec on GitHub",
+      "group": "code"
+    },
+    {
+      "name": "shippo",
+      "npm": "shippo",
+      "base": "https://api.goshippo.com",
+      "specFormat": "openapi3",
+      "specSource": "https://docs.goshippo.com/spec/shippoapi/public-api.yaml",
+      "style": "generated (speakeasy)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "openai-azure",
+      "npm": "@azure/openai",
+      "base": "https://{resource}.openai.azure.com",
+      "specFormat": "openapi3",
+      "specSource": "github:Azure/azure-rest-api-specs/specification/cognitiveservices/data-plane/AzureOpenAI/inference/stable/2024-10-21/inference.json",
+      "style": "generated (autorest)",
+      "wappalyzer": null,
+      "group": "code"
+    },
+    {
+      "name": "aws-s3-v3",
+      "npm": "@aws-sdk/client-s3",
+      "base": "https://s3.{region}.amazonaws.com",
+      "specFormat": "openapi3",
+      "specSource": "N/A (AWS uses Smithy, not OpenAPI) \u2014 HARD/STRETCH, likely exclude",
+      "style": "endpoint-ruleset resolution",
+      "wappalyzer": null,
+      "exclude": "AWS S3 uses Smithy 2.0 models, no official public OpenAPI/Swagger",
+      "group": "code"
+    }
+  ]
+}
